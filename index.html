@@ -337,6 +337,23 @@ function scrollShots(btn,dir){
   const shots=btn.parentElement.querySelector('.shots');
   shots.scrollBy({left:dir*300,behavior:'smooth'});
 }
+
+// Hide arrows when at scroll limits
+document.querySelectorAll('.shots').forEach(shots=>{
+  const wrap=shots.parentElement;
+  const arrowL=wrap.querySelector('.arrow-l');
+  const arrowR=wrap.querySelector('.arrow-r');
+  
+  function updateArrows(){
+    arrowL.style.opacity=shots.scrollLeft<=10?'0':'1';
+    arrowL.style.pointerEvents=shots.scrollLeft<=10?'none':'auto';
+    arrowR.style.opacity=shots.scrollLeft>=shots.scrollWidth-shots.clientWidth-10?'0':'1';
+    arrowR.style.pointerEvents=shots.scrollLeft>=shots.scrollWidth-shots.clientWidth-10?'none':'auto';
+  }
+  
+  shots.addEventListener('scroll',updateArrows);
+  updateArrows();
+});
 </script>
 </body>
 </html>
