@@ -336,7 +336,7 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
         </div>
         <p><span class="i18n-en">I've been working with Android for over 4 years, and started publishing my own apps on Google Play — always solo, always independently.</span><span class="i18n-es">Llevo más de 4 años trabajando con Android y publico mis propias apps en Google Play — siempre solo, siempre de forma independiente.</span></p>
         <p><span class="i18n-en">My approach is simple: <strong>find a real problem, build a clean solution, and ship it</strong>. No venture capital, no growth hacks. Just honest software that people actually use.</span><span class="i18n-es">Mi enfoque es simple: <strong>encontrar un problema real, construir una solución limpia y publicarla</strong>. Sin inversores, sin trucos de crecimiento. Solo software honesto que la gente usa.</span></p>
-        <p><span class="i18n-en">My apps have users across <strong>Mexico, Colombia, Argentina, Uruguay, Spain, USA</strong> and more. I'm focused on building games and apps for LATAM 🌎 — a market with massive potential and less competition.</span><span class="i18n-es">Mis apps tienen usuarios en <strong>México, Colombia, Argentina, Uruguay, España, USA</strong> y más. Mi foco es construir juegos y apps para LATAM 🌎 — un mercado con enorme potencial y menos competencia.</span></p>
+        <p><span class="i18n-en">My apps have users across <strong>Mexico, Colombia, Argentina, Uruguay, Spain, USA</strong> and more. I'm focused on building games and apps for LATAM 🌎, where I see the biggest opportunity for my products.</span><span class="i18n-es">Mis apps tienen usuarios en <strong>México, Colombia, Argentina, Uruguay, España, USA</strong> y más. Mi foco es construir juegos y apps para LATAM 🌎, donde veo la mayor oportunidad para mis productos.</span></p>
         <p><span class="i18n-en">When I'm not coding, you'll find me at the gym, playing video games, or figuring out the next app to ship. Healthy life, clear mind.</span><span class="i18n-es">Cuando no estoy programando, me encontrás en el gimnasio, jugando videojuegos o pensando en la próxima app. Vida sana, mente clara.</span></p>
       </div>
       <div class="facts">
@@ -380,7 +380,7 @@ function scrollShots(btn,dir){
   shots.scrollBy({left:dir*300,behavior:'smooth'});
 }
 
-document.querySelectorAll('.shots').forEach(shots=>{
+function initArrows(shots){
   const wrap=shots.parentElement;
   const arrowL=wrap.querySelector('.arrow-l');
   const arrowR=wrap.querySelector('.arrow-r');
@@ -393,7 +393,18 @@ document.querySelectorAll('.shots').forEach(shots=>{
   }
   
   shots.addEventListener('scroll',updateArrows);
+  // Esperar a que carguen las imágenes
+  const imgs=shots.querySelectorAll('img');
+  let loaded=0;
+  imgs.forEach(img=>{
+    if(img.complete){loaded++;if(loaded===imgs.length)updateArrows();}
+    else{img.addEventListener('load',()=>{loaded++;if(loaded===imgs.length)updateArrows();});}
+  });
   updateArrows();
+}
+
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.shots').forEach(initArrows);
 });
 </script>
 </body>
