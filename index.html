@@ -160,12 +160,12 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
     <div class="hero-content">
       <div class="tag fade"><span class="dot"></span> <span class="i18n-en">building in public</span><span class="i18n-es">construyendo en público</span></div>
       <h1 class="fade"><span class="i18n-en">I build Android apps <span class="gr">that solve real problems</span></span><span class="i18n-es">Creo apps Android <span class="gr">que resuelven problemas reales</span></span></h1>
-      <p class="fade"><span class="i18n-en">Solo developer from Uruguay. 4+ years building for Android. Games and apps for LATAM 🌎. No investors, no team — just code, users, and honest work.</span><span class="i18n-es">Desarrollador independiente de Uruguay. 4+ años con Android. Juegos y apps para LATAM 🌎. Sin inversores, sin equipo — solo código, usuarios y trabajo honesto.</span></p>
+      <p class="fade"><span class="i18n-en">Solo developer from Uruguay. <span data-stat="years"></span> years building for Android. Games and apps for LATAM 🌎. No investors, no team — just code, users, and honest work.</span><span class="i18n-es">Desarrollador independiente de Uruguay. <span data-stat="years"></span> años con Android. Juegos y apps para LATAM 🌎. Sin inversores, sin equipo — solo código, usuarios y trabajo honesto.</span></p>
       <div class="stats fade">
-        <div><div class="st-n">4</div><div class="st-l"><span class="i18n-en">Apps on Play Store</span><span class="i18n-es">Apps en Play Store</span></div></div>
-        <div><div class="st-n">7K+</div><div class="st-l"><span class="i18n-en">Downloads</span><span class="i18n-es">Descargas</span></div></div>
-        <div><div class="st-n">4.6★</div><div class="st-l"><span class="i18n-en">Average Rating</span><span class="i18n-es">Rating promedio</span></div></div>
-        <div><div class="st-n">4+</div><div class="st-l"><span class="i18n-en">Years Android Dev</span><span class="i18n-es">Años Android Dev</span></div></div>
+        <div><div class="st-n" data-stat="apps"></div><div class="st-l"><span class="i18n-en">Apps on Play Store</span><span class="i18n-es">Apps en Play Store</span></div></div>
+        <div><div class="st-n" data-stat="totalDownloads"></div><div class="st-l"><span class="i18n-en">Downloads</span><span class="i18n-es">Descargas</span></div></div>
+        <div><div class="st-n" data-stat="rating"></div><div class="st-l"><span class="i18n-en">Average Rating</span><span class="i18n-es">Rating promedio</span></div></div>
+        <div><div class="st-n" data-stat="years"></div><div class="st-l"><span class="i18n-en">Years Android Dev</span><span class="i18n-es">Años Android Dev</span></div></div>
       </div>
     </div>
     <div class="hero-flag">🇺🇾</div>
@@ -225,13 +225,13 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
         </div>
       </div>
       <div class="badges">
-        <span class="b b-p"><span class="i18n-en">12 categories</span><span class="i18n-es">12 categorías</span></span>
-        <span class="b b-p"><span class="i18n-en">1600+ words & movies</span><span class="i18n-es">1600+ palabras y películas</span></span>
+        <span class="b b-p"><span class="i18n-en"><span data-stat="mimCategories"></span> categories</span><span class="i18n-es"><span data-stat="mimCategories"></span> categorías</span></span>
+        <span class="b b-p"><span class="i18n-en"><span data-stat="mimWords"></span> words & movies</span><span class="i18n-es"><span data-stat="mimWords"></span> palabras y películas</span></span>
         <span class="b b-g"><span class="i18n-en">6 languages</span><span class="i18n-es">6 idiomas</span></span>
-        <span class="b b-g">1K+ <span class="i18n-en">downloads</span><span class="i18n-es">descargas</span></span>
+        <span class="b b-g"><span data-stat="mimDownloads"></span> <span class="i18n-en">downloads</span><span class="i18n-es">descargas</span></span>
         <span class="b b-o">AdMob</span>
       </div>
-      <p class="app-desc"><span class="i18n-en">The ultimate charades party game. Choose from 12 free categories: Movies, TV Shows, Animals, Objects, Celebrities, Sports, Latin Novels, Activities, Phrases, and more. Play in cooperative or teams mode with customizable rounds, time, and difficulty. Available in 6 languages from day one — no subscriptions, fair monetization.</span><span class="i18n-es">El juego de charadas definitivo. Elegí entre 12 categorías gratuitas: Películas, Series, Animales, Objetos, Celebridades, Deportes, Novelas Latinas, Actividades, Frases y más. Jugá en modo cooperativo o por equipos. Disponible en 6 idiomas desde el día 1 — sin suscripciones, monetización justa.</span></p>
+      <p class="app-desc"><span class="i18n-en">The ultimate charades party game. Choose from <span data-stat="mimCategories"></span> free categories: Movies, TV Shows, Animals, Objects, Celebrities, Sports, Latin Novels, Activities, Phrases, Music, Food, Videogames, Places and more. Play in cooperative or teams mode with customizable rounds, time, and difficulty. Available in 6 languages from day one — no subscriptions, fair monetization.</span><span class="i18n-es">El juego de charadas definitivo. Elegí entre <span data-stat="mimCategories"></span> categorías gratuitas: Películas, Series, Animales, Objetos, Celebridades, Deportes, Novelas Latinas, Actividades, Frases, Música, Comidas, Videojuegos, Lugares y más. Jugá en modo cooperativo o por equipos. Disponible en 6 idiomas desde el día 1 — sin suscripciones, monetización justa.</span></p>
      <div class="shots-wrap">
         <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
         <div class="shots">
@@ -261,8 +261,8 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
         </div>
       </div>
       <div class="badges">
-        <span class="b b-g"><span class="i18n-en">5K+ downloads</span><span class="i18n-es">5K+ descargas</span></span>
-        <span class="b b-g">4.6★ rating</span>
+        <span class="b b-g"><span class="i18n-en"><span data-stat="recDownloads"></span> downloads</span><span class="i18n-es"><span data-stat="recDownloads"></span> descargas</span></span>
+        <span class="b b-g"><span data-stat="recRating"></span>★ rating</span>
         <span class="b b-p"><span class="i18n-en">In-app purchases</span><span class="i18n-es">Compras in-app</span></span>
         <span class="b b-o"><span class="i18n-en">10 themes</span><span class="i18n-es">10 temas</span></span>
       </div>
@@ -295,7 +295,7 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
         </div>
       </div>
       <div class="badges">
-        <span class="b b-o"><span class="i18n-en">250+ downloads</span><span class="i18n-es">250+ descargas</span></span>
+        <span class="b b-o"><span class="i18n-en"><span data-stat="ashDownloads"></span> downloads</span><span class="i18n-es"><span data-stat="ashDownloads"></span> descargas</span></span>
         <span class="b b-o"><span class="i18n-en">5★ reviews</span><span class="i18n-es">5★ reseñas</span></span>
         <span class="b b-g"><span class="i18n-en">Adopted by nonprofit</span><span class="i18n-es">Adoptada por ONG</span></span>
       </div>
@@ -333,17 +333,17 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
             <div class="about-role"><span class="i18n-en">Indie Android Developer — Uruguay 🇺🇾</span><span class="i18n-es">Desarrollador Android Indie — Uruguay 🇺🇾</span></div>
           </div>
         </div>
-        <p><span class="i18n-en">I've been working with Android for over 4 years, and started publishing my own apps on Google Play — always solo, always independently.</span><span class="i18n-es">Llevo más de 4 años trabajando con Android y publico mis propias apps en Google Play — siempre solo, siempre de forma independiente.</span></p>
+        <p><span class="i18n-en">I've been working with Android for over <span data-stat="years"></span> years, and started publishing my own apps on Google Play — always solo, always independently.</span><span class="i18n-es">Llevo más de <span data-stat="years"></span> años trabajando con Android y publico mis propias apps en Google Play — siempre solo, siempre de forma independiente.</span></p>
         <p><span class="i18n-en">My approach is simple: <strong>find a real problem, build a clean solution, and ship it</strong>. No venture capital, no growth hacks. Just honest software that people actually use.</span><span class="i18n-es">Mi enfoque es simple: <strong>encontrar un problema real, construir una solución limpia y publicarla</strong>. Sin inversores, sin trucos de crecimiento. Solo software honesto que la gente usa.</span></p>
         <p><span class="i18n-en">My apps have users across <strong>Mexico, Colombia, Argentina, Uruguay, Spain, USA</strong> and more. I'm focused on building games and apps for LATAM 🌎, where I see the biggest opportunity for my products.</span><span class="i18n-es">Mis apps tienen usuarios en <strong>México, Colombia, Argentina, Uruguay, España, USA</strong> y más. Mi foco es construir juegos y apps para LATAM 🌎, donde veo la mayor oportunidad para mis productos.</span></p>
         <p><span class="i18n-en">When I'm not coding, you'll find me at the gym, playing video games, or figuring out the next app to ship. Healthy life, clear mind.</span><span class="i18n-es">Cuando no estoy programando, me encontrás en el gimnasio, jugando videojuegos o pensando en la próxima app. Vida sana, mente clara.</span></p>
       </div>
       <div class="facts">
-        <div class="fact"><div class="fact-i">📱</div><div class="fact-n">4</div><div class="fact-l"><span class="i18n-en">Published Apps</span><span class="i18n-es">Apps publicadas</span></div></div>
-        <div class="fact"><div class="fact-i">⬇️</div><div class="fact-n">7K+</div><div class="fact-l"><span class="i18n-en">Total Downloads</span><span class="i18n-es">Descargas totales</span></div></div>
-        <div class="fact"><div class="fact-i">🌍</div><div class="fact-n">10+</div><div class="fact-l"><span class="i18n-en">Countries</span><span class="i18n-es">Países</span></div></div>
-        <div class="fact"><div class="fact-i">⭐</div><div class="fact-n">4.6</div><div class="fact-l"><span class="i18n-en">Avg Rating</span><span class="i18n-es">Rating promedio</span></div></div>
-        <div class="fact"><div class="fact-i">🛠️</div><div class="fact-n">4+</div><div class="fact-l"><span class="i18n-en">Years Android Dev</span><span class="i18n-es">Años Android Dev</span></div></div>
+        <div class="fact"><div class="fact-i">📱</div><div class="fact-n" data-stat="apps"></div><div class="fact-l"><span class="i18n-en">Published Apps</span><span class="i18n-es">Apps publicadas</span></div></div>
+        <div class="fact"><div class="fact-i">⬇️</div><div class="fact-n" data-stat="totalDownloads"></div><div class="fact-l"><span class="i18n-en">Total Downloads</span><span class="i18n-es">Descargas totales</span></div></div>
+        <div class="fact"><div class="fact-i">🌍</div><div class="fact-n" data-stat="countries"></div><div class="fact-l"><span class="i18n-en">Countries</span><span class="i18n-es">Países</span></div></div>
+        <div class="fact"><div class="fact-i">⭐</div><div class="fact-n" data-stat="rating"></div><div class="fact-l"><span class="i18n-en">Avg Rating</span><span class="i18n-es">Rating promedio</span></div></div>
+        <div class="fact"><div class="fact-i">🛠️</div><div class="fact-n" data-stat="years"></div><div class="fact-l"><span class="i18n-en">Years Android Dev</span><span class="i18n-es">Años Android Dev</span></div></div>
         <div class="fact"><div class="fact-i">🇺🇾</div><div class="fact-n">UY</div><div class="fact-l"><span class="i18n-en">Made in Uruguay</span><span class="i18n-es">Hecho en Uruguay</span></div></div>
       </div>
     </div>
@@ -365,6 +365,39 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
 </footer>
 
 <script>
+// ============================================
+// CIFRAS CENTRALIZADAS — actualizar acá
+// ============================================
+const STATS = {
+  // Hero + About
+  apps: "4",
+  totalDownloads: "11K+",
+  rating: "4.6★",
+  years: "4+",
+  countries: "10+",
+  
+  // Dígalo con Mímica
+  mimCategories: "16",
+  mimWords: "1600+",
+  mimDownloads: "1K+",
+  
+  // Mis Recordatorios
+  recDownloads: "10K+",
+  recRating: "4.6",
+  
+  // Saldo a ASH
+  ashDownloads: "250+"
+};
+
+// Rellena todos los spans con data-stat
+function applyStats(){
+  document.querySelectorAll('[data-stat]').forEach(el=>{
+    const key=el.getAttribute('data-stat');
+    if(STATS[key]!==undefined)el.textContent=STATS[key];
+  });
+}
+applyStats();
+
 function setLang(l){
   document.querySelectorAll('.i18n-en').forEach(e=>e.style.display=l==='en'?'inline':'none');
   document.querySelectorAll('.i18n-es').forEach(e=>e.style.display=l==='es'?'inline':'none');
@@ -392,7 +425,6 @@ function initArrows(shots){
   }
   
   shots.addEventListener('scroll',updateArrows);
-  // Esperar a que carguen las imágenes
   const imgs=shots.querySelectorAll('img');
   let loaded=0;
   imgs.forEach(img=>{
