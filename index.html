@@ -63,7 +63,6 @@
   .lang-btn.active{background:#aaffd8;color:#07070d;border-radius:6px;}
   .lang-btn:hover:not(.active){color:#e4e1eb;}
   .lang-toggle{display:flex;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;}
-  /* Screenshot carousel */
   .shots{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-behavior:smooth;}
   .shots::-webkit-scrollbar{display:none;}
   .shots img{height:280px;border-radius:12px;scroll-snap-align:start;flex-shrink:0;border:1px solid rgba(255,255,255,0.05);transition:transform 0.3s;}
@@ -140,8 +139,8 @@
         <span class="i18n-es">Creo apps Android que <span class="text-primary italic">resuelven problemas reales</span></span>
       </h1>
       <p class="font-body-lg text-on-surface-variant max-w-xl mx-auto">
-        <span class="i18n-en">Solo developer from Uruguay. 4+ years building for Android. Games and apps for LATAM 🌎. No investors, no team — just code, users, and honest work.</span>
-        <span class="i18n-es">Desarrollador independiente de Uruguay. 4+ años con Android. Juegos y apps para LATAM 🌎. Sin inversores, sin equipo — solo código, usuarios y trabajo honesto.</span>
+        <span class="i18n-en">Solo developer from Uruguay. <span data-stat="years"></span> years building for Android. Games and apps for LATAM 🌎. No investors, no team — just code, users, and honest work.</span>
+        <span class="i18n-es">Desarrollador independiente de Uruguay. <span data-stat="years"></span> años con Android. Juegos y apps para LATAM 🌎. Sin inversores, sin equipo — solo código, usuarios y trabajo honesto.</span>
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
         <div class="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
@@ -202,11 +201,11 @@
         <div class="flex gap-2 flex-wrap mb-4">
           <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">PARTY GAME</span>
           <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">FREE + PRO</span>
-          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">8 <span class="i18n-en">GAMES</span><span class="i18n-es">JUEGOS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span data-stat="larGames"></span> <span class="i18n-en">GAMES</span><span class="i18n-es">JUEGOS</span></span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
-          <span class="i18n-en">The ultimate party game app for groups. Truth or Dare, Tutti Frutti, Never Have I Ever, Who's Most Likely, Bomb Question, Taboo, What Would You Rather, The Impostor. Free to play, Pro to remove ads.</span>
-          <span class="i18n-es">La app de juegos grupales definitiva. Verdad o Reto, Tutti Frutti, Yo Nunca, ¿Quién es más probable?, Pregunta Bomba, Tabú, ¿Qué Preferís? y El Impostor. Gratis para jugar, Pro para quitar los anuncios.</span>
+          <span class="i18n-en">The ultimate party game app for groups. Truth or Dare, Tutti Frutti, Never Have I Ever, Who's Most Likely, Bomb Question, Taboo, What Would You Rather, The Impostor and more. Free to play, Pro to remove ads.</span>
+          <span class="i18n-es">La app de juegos grupales definitiva. Verdad o Reto, Tutti Frutti, Yo Nunca, ¿Quién es más probable?, Pregunta Bomba, Tabú, ¿Qué Preferís?, El Impostor y más. Gratis para jugar, Pro para quitar los anuncios.</span>
         </p>
         <div class="shots-wrap mb-6">
           <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
@@ -239,14 +238,14 @@
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mb-4">
-          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">24 <span class="i18n-en">CATEGORIES</span><span class="i18n-es">CATEGORÍAS</span></span>
-          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">2200+ <span class="i18n-en">WORDS</span><span class="i18n-es">PALABRAS</span></span>
-          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">6 <span class="i18n-en">LANGUAGES</span><span class="i18n-es">IDIOMAS</span></span>
-          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">5K+ <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimCategories"></span> <span class="i18n-en">CATEGORIES</span><span class="i18n-es">CATEGORÍAS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimWords"></span> <span class="i18n-en">WORDS</span><span class="i18n-es">PALABRAS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimLanguages"></span> <span class="i18n-en">LANGUAGES</span><span class="i18n-es">IDIOMAS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span data-stat="mimDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
-          <span class="i18n-en">Charades for groups. 24 categories, 2200+ words, 6 languages. Built for LATAM. No subscriptions — fair monetization.</span>
-          <span class="i18n-es">Charadas para grupos. 24 categorías, 2200+ palabras, 6 idiomas. Hecho para LATAM. Sin suscripciones — monetización justa.</span>
+          <span class="i18n-en">Charades for groups. <span data-stat="mimCategories"></span> categories, <span data-stat="mimWords"></span> words, <span data-stat="mimLanguages"></span> languages. Built for LATAM. No subscriptions — fair monetization.</span>
+          <span class="i18n-es">Charadas para grupos. <span data-stat="mimCategories"></span> categorías, <span data-stat="mimWords"></span> palabras, <span data-stat="mimLanguages"></span> idiomas. Hecho para LATAM. Sin suscripciones — monetización justa.</span>
         </p>
         <div class="shots-wrap mb-6">
           <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
@@ -275,12 +274,12 @@
           </div>
           <div class="flex-1">
             <h3 class="font-display-lg text-[22px]">Mis Recordatorios</h3>
-            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase">V8.4 STABLE · <span class="i18n-en">My Reminders — Productivity</span><span class="i18n-es">Recordatorios — Productividad</span></p>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase">V<span data-stat="recVersion"></span> STABLE · <span class="i18n-en">My Reminders — Productivity</span><span class="i18n-es">Recordatorios — Productividad</span></p>
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mb-4">
-          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">5K+ <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
-          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">4.6★</span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recRating"></span>★</span>
           <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
@@ -316,8 +315,8 @@
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mb-4">
-          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]">500+ <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
-          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]">5★</span>
+          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]"><span data-stat="ashDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]"><span data-stat="ashRating"></span>★</span>
           <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span class="i18n-en">ADOPTED BY NONPROFIT</span><span class="i18n-es">ADOPTADA POR ONG</span></span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
@@ -360,7 +359,7 @@
             <div class="glass-card p-6 rounded-xl border-l-2 border-primary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Dígalo con Mímica — <span class="i18n-en">Major Update</span><span class="i18n-es">Actualización mayor</span></h4>
               <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
-                <li><span class="i18n-en">8 new categories (total: 24), 2200+ words</span><span class="i18n-es">8 categorías nuevas (total: 24), 2200+ palabras</span></li>
+                <li><span class="i18n-en">8 new categories (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> words</span><span class="i18n-es">8 categorías nuevas (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> palabras</span></li>
                 <li><span class="i18n-en">Complete UI redesign</span><span class="i18n-es">Rediseño completo de la UI</span></li>
                 <li><span class="i18n-en">Search and favorites system</span><span class="i18n-es">Sistema de búsqueda y favoritos</span></li>
               </ul>
@@ -371,7 +370,7 @@
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
             <div class="glass-card p-6 rounded-xl border-r-2 border-secondary">
-              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V8.4</h4>
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V<span data-stat="recVersion"></span></h4>
               <p class="font-body-sm text-on-surface-variant">
                 <span class="i18n-en">New features, multiple alerts per reminder, additional language support. Stable production release.</span>
                 <span class="i18n-es">Nuevas funcionalidades, alertas múltiples por recordatorio, soporte de idiomas adicionales. Versión estable en producción.</span>
@@ -389,8 +388,8 @@
             <div class="glass-card p-6 rounded-xl border-l-2 border-tertiary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">La Ronda — <span class="i18n-en">Official Launch</span><span class="i18n-es">Lanzamiento oficial</span></h4>
               <p class="font-body-sm text-on-surface-variant">
-                <span class="i18n-en">Initial production release on Google Play. Party game app for groups with 8 game modes.</span>
-                <span class="i18n-es">Lanzamiento en Google Play. App de juegos grupales con 12 modos de juego.</span>
+                <span class="i18n-en">Initial production release on Google Play. Party game app for groups with <span data-stat="larGames"></span> game modes.</span>
+                <span class="i18n-es">Lanzamiento en Google Play. App de juegos grupales con <span data-stat="larGames"></span> modos de juego.</span>
               </p>
             </div>
           </div>
@@ -506,6 +505,48 @@
 </main>
 
 <script>
+  // ============================================
+  // CIFRAS CENTRALIZADAS — solo tocar acá
+  // ============================================
+  const STATS = {
+    // Hero / About
+    apps:          "4",
+    totalDownloads: 11,      // número para animación (K+ se agrega auto)
+    rating:        4.6,      // número para animación (★ se agrega auto)
+    years:         4,        // número para animación (+ se agrega auto)
+    countries:     "10+",
+
+    // La Ronda
+    larGames:      "12",
+
+    // Dígalo con Mímica
+    mimCategories: "24",
+    mimWords:      "2200+",
+    mimLanguages:  "6",
+    mimDownloads:  "5K+",
+
+    // Mis Recordatorios
+    recDownloads:  "5K+",
+    recRating:     "4.6",
+    recVersion:    "8.4",
+
+    // Saldo a ASH
+    ashDownloads:  "500+",
+    ashRating:     "5",
+  };
+
+  // Rellena todos los spans con data-stat (excepto los animados del hero)
+  const ANIMATED = new Set(['stat-apps','stat-downloads','stat-rating','stat-years']);
+  function applyStats(){
+    document.querySelectorAll('[data-stat]').forEach(el=>{
+      if(el.id && ANIMATED.has(el.id)) return;
+      const key=el.getAttribute('data-stat');
+      if(STATS[key]!==undefined) el.textContent=STATS[key];
+    });
+  }
+  applyStats();
+
+  // Animación de conteo para el hero
   function animateValue(obj, start, end, duration, suffix="") {
     let startTimestamp=null;
     const step=(timestamp)=>{
@@ -520,16 +561,17 @@
   const observer=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        animateValue(document.getElementById('stat-apps'),0,4,1500);
-        animateValue(document.getElementById('stat-downloads'),0,11,2000,"K+");
-        animateValue(document.getElementById('stat-rating'),0,4.6,2000,"★");
-        animateValue(document.getElementById('stat-years'),0,4,1500,"+");
+        animateValue(document.getElementById('stat-apps'),0,parseInt(STATS.apps),1500);
+        animateValue(document.getElementById('stat-downloads'),0,STATS.totalDownloads,2000,"K+");
+        animateValue(document.getElementById('stat-rating'),0,STATS.rating,2000,"★");
+        animateValue(document.getElementById('stat-years'),0,STATS.years,1500,"+");
         observer.unobserve(entry.target);
       }
     });
   },{threshold:0.5});
   observer.observe(document.getElementById('hero'));
 
+  // Lang toggle
   function setLang(l){
     document.querySelectorAll('.i18n-en').forEach(e=>e.style.display=l==='en'?'inline':'none');
     document.querySelectorAll('.i18n-es').forEach(e=>e.style.display=l==='es'?'inline':'none');
@@ -539,11 +581,11 @@
   }
   try{const s=localStorage.getItem('lang');if(s)setLang(s);}catch(e){}
 
+  // Carrusel
   function scrollShots(btn,dir){
     const shots=btn.parentElement.querySelector('.shots');
     shots.scrollBy({left:dir*300,behavior:'smooth'});
   }
-
   function initArrows(shots){
     const wrap=shots.parentElement;
     const arrowL=wrap.querySelector('.arrow-l');
@@ -565,6 +607,7 @@
   }
   window.addEventListener('load',()=>{document.querySelectorAll('.shots').forEach(initArrows);});
 
+  // Nav scroll
   window.addEventListener('scroll',()=>{
     const nav=document.querySelector('nav');
     if(window.scrollY>50) nav.classList.add('shadow-lg');
