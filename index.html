@@ -88,8 +88,8 @@
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#social">Social</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
       <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+<button class="lang-btn active" onclick="setLang('es')">ES</button>
       </div>
     </div>
     <button class="md:hidden text-primary"><span class="material-symbols-outlined">menu</span></button>
@@ -416,8 +416,10 @@
           <span class="i18n-es">EL DEVELOPER<br/><span class="text-primary-container">DETRÁS DE LAS APPS</span></span>
         </h2>
         <p class="font-body-lg text-on-surface-variant leading-relaxed">
-          <span class="i18n-en">I'm Rodrigo Ferreira, a solo Android developer from Montevideo. I build games and apps for LATAM — always independently, always with real users in mind. No investors, no team. Just code and honest work.</span>
-          <span class="i18n-es">Soy Rodrigo Ferreira, developer Android independiente de Montevideo. Construyo juegos y apps para LATAM — siempre solo, siempre pensando en usuarios reales. Sin inversores, sin equipo. Solo código y trabajo honesto.</span>
+          <span class="i18n-en">I'm Rodrigo Ferreira, an Android developer from Montevideo. On top of my day job, I've been building and publishing my own apps for a while now — long before AI flipped the industry upside down, and let's be honest, it really did.
+I love games, I love mobile development, and at some point I thought "why not?" Since then I've built a portfolio of my own, being the sole driver behind each project. With the help of some friends along the way, but mostly on my own.</span>
+          <span class="i18n-es">Soy Rodrigo Ferreira, developer Android de Montevideo. Además de mi trabajo formal, hace tiempo empecé a publicar apps por mi cuenta — mucho antes de que la IA le diera vuelta al rubro, y seamos honestos, le dio vuelta completamente.
+Me gustan los juegos, me gusta el desarrollo mobile, y en un momento dije "¿por qué no?" Desde entonces tengo un portfolio propio que fui armando de a poco, siendo el único impulsor de cada proyecto. Con el apoyo de algunos amigos y conocidos en puntos específicos, pero básicamente solo.</span>
         </p>
         <div class="grid grid-cols-2 gap-4">
           <div class="p-4 glass-card rounded-lg">
@@ -579,7 +581,7 @@
     document.documentElement.lang=l;
     try{localStorage.setItem('lang',l);}catch(e){}
   }
-  try{const s=localStorage.getItem('lang');if(s)setLang(s);}catch(e){}
+try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}catch(e){}
 
   // Carrusel
   function scrollShots(btn,dir){
