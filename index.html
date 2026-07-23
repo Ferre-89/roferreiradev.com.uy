@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>RoFerreiraDev — Indie Android Developer from Uruguay</title>
-<meta name="description" content="Solo Android developer from Uruguay. 4 apps on Google Play. Building in public."/>
+<meta name="description" content="Solo Android developer from Uruguay. 5 apps on Google Play. Building in public."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -74,7 +74,6 @@
 </style>
 </head>
 <body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-lg border-b border-outline-variant/20 h-16">
   <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
@@ -89,13 +88,12 @@
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
       <div class="lang-toggle">
         <button class="lang-btn" onclick="setLang('en')">EN</button>
-<button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
       </div>
     </div>
     <button class="md:hidden text-primary"><span class="material-symbols-outlined">menu</span></button>
   </div>
 </nav>
-
 <!-- SIDEBAR -->
 <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest backdrop-blur-xl border-r border-outline-variant/10 shadow-2xl hidden lg:flex flex-col z-40">
   <div class="p-8 mt-16">
@@ -119,9 +117,7 @@
     </div>
   </div>
 </aside>
-
 <main class="lg:ml-72 pt-16">
-
   <!-- HERO -->
   <section class="relative min-h-screen flex flex-col items-center justify-center px-gutter py-section-gap overflow-hidden" id="hero">
     <div class="absolute inset-0 z-0 opacity-40">
@@ -172,7 +168,6 @@
       </div>
     </div>
   </section>
-
   <!-- APPS -->
   <section class="px-gutter py-section-gap max-w-container-max mx-auto" id="apps">
     <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16 border-l-4 border-primary pl-8">
@@ -180,9 +175,51 @@
         <p class="font-label-caps text-label-caps text-primary mb-2 uppercase"><span class="i18n-en">Portfolio</span><span class="i18n-es">Portafolio</span></p>
         <h2 class="font-display-lg text-headline-md text-on-surface"><span class="i18n-en">WHAT I'VE SHIPPED</span><span class="i18n-es">LO QUE HE PUBLICADO</span></h2>
       </div>
-      <div class="font-code-sm text-code-sm text-outline uppercase tracking-tighter">Built with Java &amp; Kotlin · Android</div>
+      <div class="font-code-sm text-code-sm text-outline uppercase tracking-tighter">Built with Java, Kotlin &amp; Unity · Android</div>
     </div>
     <div class="flex flex-col gap-8">
+
+      <!-- BLOKIS -->
+      <div class="glass-card rounded-2xl p-8 hover:border-secondary/30 transition-all hover:-translate-y-1">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_blok.png" alt="Blokis icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 flex-wrap">
+              <h3 class="font-display-lg text-[22px]">Blokis</h3>
+              <span class="px-3 py-1 bg-secondary/20 border border-secondary/30 text-secondary text-[10px] font-label-caps rounded-full">NEW</span>
+            </div>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase"><span class="i18n-en">Block Puzzle — Casual Game · Unity</span><span class="i18n-es">Puzzle de bloques — Juego casual · Unity</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">PUZZLE</span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisModes"></span> <span class="i18n-en">MODES</span><span class="i18n-es">MODOS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">Block puzzle game with 3 modes: Classic survival, 30 Levels, and Time Attack. Place pieces, complete lines, beat your records. My first Unity game — built from scratch.</span>
+          <span class="i18n-es">Juego de puzzle de bloques con 3 modos: Clásico survival, 30 Niveles y Contrarreloj. Colocá piezas, completá líneas, batí tus récords. Mi primer juego en Unity — construido desde cero.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/blok_1.png" alt="Blokis - Home">
+            <img src="img/blok_2.png" alt="Blokis - Classic mode">
+            <img src="img/blok_3.png" alt="Blokis - Levels">
+            <img src="img/blok_4.png" alt="Blokis - Time Attack">
+            <img src="img/blok_5.png" alt="Blokis - Combo">
+            <img src="img/blok_6.png" alt="Blokis - Records">
+            <img src="img/blok_7.png" alt="Blokis - Game Over">
+            <img src="img/blok_8.png" alt="Blokis - Premium">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.roferreiradev.blokis" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-secondary/10 border border-secondary/20 text-secondary rounded-xl font-label-caps text-label-caps hover:bg-secondary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
 
       <!-- La Ronda -->
       <div class="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all hover:-translate-y-1">
@@ -193,7 +230,6 @@
           <div class="flex-1">
             <div class="flex items-center gap-3 flex-wrap">
               <h3 class="font-display-lg text-[22px]">La Ronda: Juegos con Amigos</h3>
-              <span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary text-[10px] font-label-caps rounded-full">NEW</span>
             </div>
             <p class="font-code-sm text-[10px] text-outline mt-1 uppercase"><span class="i18n-en">Party Games — Group Entertainment</span><span class="i18n-es">Juegos de fiesta — Entretenimiento grupal</span></p>
           </div>
@@ -338,7 +374,6 @@
           <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
         </a>
       </div>
-
     </div>
   </section>
 
@@ -351,6 +386,23 @@
       </div>
       <div class="relative space-y-12">
         <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
+
+        <!-- Entry 0 — Blokis -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.07</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Blokis — <span class="i18n-en">Launch on Google Play</span><span class="i18n-es">Lanzamiento en Google Play</span></h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">First Unity game — block puzzle with <span data-stat="blokisModes"></span> modes</span><span class="i18n-es">Primer juego en Unity — puzzle de bloques con <span data-stat="blokisModes"></span> modos</span></li>
+                <li><span class="i18n-en">Classic, 30 Levels and Time Attack</span><span class="i18n-es">Clásico, 30 Niveles y Contrarreloj</span></li>
+                <li><span class="i18n-en">Premium IAP — remove ads</span><span class="i18n-es">IAP Premium — quitar anuncios</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- Entry 1 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
@@ -366,6 +418,7 @@
             </div>
           </div>
         </div>
+
         <!-- Entry 2 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
@@ -380,6 +433,7 @@
           <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
           <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
         </div>
+
         <!-- Entry 3 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-tertiary">2026.04</p></div>
@@ -415,13 +469,14 @@
           <span class="i18n-en">THE DEVELOPER<br/><span class="text-primary-container">BEHIND THE APPS</span></span>
           <span class="i18n-es">EL DEVELOPER<br/><span class="text-primary-container">DETRÁS DE LAS APPS</span></span>
         </h2>
-       <p class="font-body-lg text-on-surface-variant leading-relaxed">
-  <span class="i18n-en">I'm Rodrigo Ferreira, an Android developer from Montevideo. Beyond my formal day job, a while ago I decided to channel my passion for gaming and mobile development into building my own portfolio of apps. I started this journey long before the AI boom, driving every project from the ground up. While the development and execution are entirely my own, it's far from a solitary path: at key stages, I always make it a point to bounce ideas around, validate mechanics, and learn from the perspectives of close friends and great professionals in my network. At the end of the day, the code is mine, but the learning is shared.</span>
-  <span class="i18n-es">Soy Rodrigo Ferreira, developer Android de Montevideo. Más allá de mi día a día profesional, hace tiempo decidí volcar mi pasión por los juegos y el entorno mobile en un portfolio de apps propias. Empecé esto mucho antes del boom de la IA, impulsando cada proyecto desde cero. Aunque el desarrollo y la ejecución corren por mi cuenta, no es un camino solitario: en momentos clave siempre busco contrastar opiniones, validar mecánicas y nutrirme de la perspectiva de grandes profesionales y amigos que tengo cerca. Al final del día, el código es mío, pero el aprendizaje es compartido.</span>
-</p><div class="grid grid-cols-2 gap-4">
+        <p class="font-body-lg text-on-surface-variant leading-relaxed">
+          <span class="i18n-en">I'm Rodrigo Ferreira, an Android developer from Montevideo. Beyond my formal day job, a while ago I decided to channel my passion for gaming and mobile development into building my own portfolio of apps. I started this journey long before the AI boom, driving every project from the ground up. While the development and execution are entirely my own, it's far from a solitary path: at key stages, I always make it a point to bounce ideas around, validate mechanics, and learn from the perspectives of close friends and great professionals in my network. At the end of the day, the code is mine, but the learning is shared.</span>
+          <span class="i18n-es">Soy Rodrigo Ferreira, developer Android de Montevideo. Más allá de mi día a día profesional, hace tiempo decidí volcar mi pasión por los juegos y el entorno mobile en un portfolio de apps propias. Empecé esto mucho antes del boom de la IA, impulsando cada proyecto desde cero. Aunque el desarrollo y la ejecución corren por mi cuenta, no es un camino solitario: en momentos clave siempre busco contrastar opiniones, validar mecánicas y nutrirme de la perspectiva de grandes profesionales y amigos que tengo cerca. Al final del día, el código es mío, pero el aprendizaje es compartido.</span>
+        </p>
+        <div class="grid grid-cols-2 gap-4">
           <div class="p-4 glass-card rounded-lg">
             <p class="font-label-caps text-primary text-[10px] mb-1">STACK</p>
-            <p class="font-code-sm">Java / Kotlin</p>
+            <p class="font-code-sm">Java / Kotlin / Unity</p>
           </div>
           <div class="p-4 glass-card rounded-lg">
             <p class="font-label-caps text-secondary text-[10px] mb-1">PHILOSOPHY</p>
@@ -500,41 +555,36 @@
       </div>
     </div>
   </footer>
-
 </main>
-
 <script>
   // ============================================
   // CIFRAS CENTRALIZADAS — solo tocar acá
   // ============================================
   const STATS = {
     // Hero / About
-    apps:          "4",
-    totalDownloads: 11,      // número para animación (K+ se agrega auto)
-    rating:        4.6,      // número para animación (★ se agrega auto)
-    years:         4,        // número para animación (+ se agrega auto)
+    apps:          "5",
+    totalDownloads: 11,
+    rating:        4.6,
+    years:         4,
     countries:     "10+",
-
+    // Blokis
+    blokisModes:   "3",
     // La Ronda
     larGames:      "12",
-
     // Dígalo con Mímica
     mimCategories: "24",
     mimWords:      "2200+",
-    mimLanguages:  "6",
+    mimLanguages:  "8",
     mimDownloads:  "5K+",
-
     // Mis Recordatorios
     recDownloads:  "5K+",
     recRating:     "4.6",
-    recVersion:    "8.4",
-
+    recVersion:    "8.5",
     // Saldo a ASH
-    ashDownloads:  "500+",
+    ashDownloads:  "376+",
     ashRating:     "5",
   };
 
-  // Rellena todos los spans con data-stat (excepto los animados del hero)
   const ANIMATED = new Set(['stat-apps','stat-downloads','stat-rating','stat-years']);
   function applyStats(){
     document.querySelectorAll('[data-stat]').forEach(el=>{
@@ -545,7 +595,6 @@
   }
   applyStats();
 
-  // Animación de conteo para el hero
   function animateValue(obj, start, end, duration, suffix="") {
     let startTimestamp=null;
     const step=(timestamp)=>{
@@ -557,6 +606,7 @@
     };
     window.requestAnimationFrame(step);
   }
+
   const observer=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -570,7 +620,6 @@
   },{threshold:0.5});
   observer.observe(document.getElementById('hero'));
 
-  // Lang toggle
   function setLang(l){
     document.querySelectorAll('.i18n-en').forEach(e=>e.style.display=l==='en'?'inline':'none');
     document.querySelectorAll('.i18n-es').forEach(e=>e.style.display=l==='es'?'inline':'none');
@@ -578,9 +627,8 @@
     document.documentElement.lang=l;
     try{localStorage.setItem('lang',l);}catch(e){}
   }
-try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}catch(e){}
+  try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}catch(e){}
 
-  // Carrusel
   function scrollShots(btn,dir){
     const shots=btn.parentElement.querySelector('.shots');
     shots.scrollBy({left:dir*300,behavior:'smooth'});
@@ -606,7 +654,6 @@ try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}cat
   }
   window.addEventListener('load',()=>{document.querySelectorAll('.shots').forEach(initArrows);});
 
-  // Nav scroll
   window.addEventListener('scroll',()=>{
     const nav=document.querySelector('nav');
     if(window.scrollY>50) nav.classList.add('shadow-lg');
