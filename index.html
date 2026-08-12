@@ -71,6 +71,11 @@
   .arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);color:#e4e1eb;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:all 0.2s;font-size:1.1rem;backdrop-filter:blur(8px);}
   .arrow:hover{background:rgba(255,255,255,0.15);}
   .arrow-l{left:8px;}.arrow-r{right:8px;}
+  .quick-link{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:#e4e1eb;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.05em;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+  .quick-link:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+  .quick-link img{width:20px;height:20px;border-radius:5px;object-fit:cover;}
+  .quick-link-social{color:rgba(188,202,193,0.7);}
+  .quick-link-social:hover{color:#e4e1eb;}
 </style>
 </head>
 <body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -82,7 +87,7 @@
       <span class="font-display-lg text-headline-md tracking-tighter text-primary">ROFERREIRA.DEV</span>
     </div>
     <div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
-      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#apps">Apps</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#quicklinks">Apps</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#changelog">Changelog</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#social">Social</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
@@ -101,6 +106,9 @@
     <div class="flex flex-col space-y-2">
       <a class="bg-primary/15 text-primary border-l-4 border-primary rounded-r-xl py-3 px-6 flex items-center gap-4 hover:translate-x-1 transition-transform" href="#hero">
         <span class="material-symbols-outlined">rocket_launch</span><span class="font-label-caps text-label-caps">Hero</span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#quicklinks">
+        <span class="material-symbols-outlined">grid_view</span><span class="font-label-caps text-label-caps">Quick Links</span>
       </a>
       <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#apps">
         <span class="material-symbols-outlined">android</span><span class="font-label-caps text-label-caps">Apps</span>
@@ -157,7 +165,7 @@
         </div>
       </div>
       <div class="pt-8 flex flex-col md:flex-row items-center justify-center gap-6">
-        <a class="px-10 py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-105 transition-all neon-glow-primary flex items-center gap-3" href="#apps">
+        <a class="px-10 py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-105 transition-all neon-glow-primary flex items-center gap-3" href="#quicklinks">
           <span class="i18n-en">EXPLORE APPS</span><span class="i18n-es">VER APPS</span>
           <span class="material-symbols-outlined">arrow_downward</span>
         </a>
@@ -168,6 +176,67 @@
       </div>
     </div>
   </section>
+
+  <!-- QUICK LINKS -->
+  <section class="px-gutter pb-16 max-w-container-max mx-auto" id="quicklinks">
+    <div class="glass-card rounded-2xl p-6 md:p-8">
+      <p class="font-label-caps text-label-caps text-primary opacity-50 mb-5 uppercase">
+        <span class="i18n-en">Quick Access</span><span class="i18n-es">Acceso rápido</span>
+      </p>
+      <!-- Apps -->
+      <div class="mb-4">
+        <p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-3">
+          <span class="i18n-en">Apps on Google Play</span><span class="i18n-es">Apps en Google Play</span>
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.blokis" target="_blank">
+            <img src="img/icon_blok.png" alt="Blokis"/>
+            🎮 Blokis
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="blokisDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.laronda" target="_blank">
+            <img src="img/icon_lar.png" alt="La Ronda"/>
+            🎲 La Ronda
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.digaloconmimica" target="_blank">
+            <img src="img/icon_mim.png" alt="Dígalo con Mímica"/>
+            🎭 Dígalo con Mímica
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="mimDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=aplicacion.de.recordatorios" target="_blank">
+            <img src="img/icon_rec.png" alt="Mis Recordatorios"/>
+            📋 Mis Recordatorios
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="recDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=saldoanimales.sin.hogar" target="_blank">
+            <img src="img/icon_ash.png" alt="Saldo a ASH"/>
+            🐾 Saldo a ASH
+          </a>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-outline-variant/20 my-4"></div>
+      <!-- Social -->
+      <div>
+        <p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-3">Social</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="quick-link quick-link-social" href="https://x.com/RoFerreiraDev" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">alternate_email</span> @RoFerreiraDev
+          </a>
+          <a class="quick-link quick-link-social" href="https://www.instagram.com/rodri.ferreira.89" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">photo_camera</span> @rodri.ferreira.89
+          </a>
+          <a class="quick-link quick-link-social" href="https://www.linkedin.com/in/rodrigoferreira1989/" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">link</span> LinkedIn
+          </a>
+          <a class="quick-link quick-link-social" href="https://play.google.com/store/apps/dev?id=7538562544554627896" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">android</span> Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- APPS -->
   <section class="px-gutter py-section-gap max-w-container-max mx-auto" id="apps">
     <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16 border-l-4 border-primary pl-8">
@@ -178,7 +247,6 @@
       <div class="font-code-sm text-code-sm text-outline uppercase tracking-tighter">Built with Java, Kotlin &amp; Unity · Android</div>
     </div>
     <div class="flex flex-col gap-8">
-
       <!-- BLOKIS -->
       <div class="glass-card rounded-2xl p-8 hover:border-secondary/30 transition-all hover:-translate-y-1">
         <div class="flex items-start gap-6 mb-4">
@@ -196,6 +264,7 @@
         <div class="flex gap-2 flex-wrap mb-4">
           <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">PUZZLE</span>
           <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisModes"></span> <span class="i18n-en">MODES</span><span class="i18n-es">MODOS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
           <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
@@ -220,7 +289,6 @@
           <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
         </a>
       </div>
-
       <!-- La Ronda -->
       <div class="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all hover:-translate-y-1">
         <div class="flex items-start gap-6 mb-4">
@@ -261,7 +329,6 @@
           <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
         </a>
       </div>
-
       <!-- Dígalo con Mímica -->
       <div class="glass-card rounded-2xl p-8 hover:border-secondary/30 transition-all hover:-translate-y-1">
         <div class="flex items-start gap-6 mb-4">
@@ -301,7 +368,6 @@
           <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
         </a>
       </div>
-
       <!-- Mis Recordatorios -->
       <div class="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all hover:-translate-y-1">
         <div class="flex items-start gap-6 mb-4">
@@ -338,7 +404,6 @@
           <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
         </a>
       </div>
-
       <!-- Saldo a ASH -->
       <div class="glass-card rounded-2xl p-8 border-l-4 border-tertiary/40 hover:-translate-y-1 transition-all">
         <div class="flex items-start gap-6 mb-4">
@@ -376,7 +441,6 @@
       </div>
     </div>
   </section>
-
   <!-- CHANGELOG -->
   <section class="bg-surface-container-lowest py-section-gap" id="changelog">
     <div class="px-gutter max-w-container-max mx-auto">
@@ -386,7 +450,6 @@
       </div>
       <div class="relative space-y-12">
         <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
-
         <!-- Entry 0 — Blokis -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.07</p></div>
@@ -402,7 +465,6 @@
             </div>
           </div>
         </div>
-
         <!-- Entry 1 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
@@ -418,7 +480,6 @@
             </div>
           </div>
         </div>
-
         <!-- Entry 2 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
@@ -433,7 +494,6 @@
           <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
           <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
         </div>
-
         <!-- Entry 3 -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-tertiary">2026.04</p></div>
@@ -451,7 +511,6 @@
       </div>
     </div>
   </section>
-
   <!-- ABOUT -->
   <section class="px-gutter py-section-gap max-w-container-max mx-auto" id="about">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
@@ -494,7 +553,6 @@
       </div>
     </div>
   </section>
-
   <!-- SOCIAL & CONTACT -->
   <section class="px-gutter py-section-gap" id="social">
     <div class="max-w-container-max mx-auto">
@@ -504,7 +562,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <a class="glass-card p-10 rounded-2xl flex flex-col items-center group hover:bg-primary/5 transition-all" href="https://x.com/RoFerreiraDev" target="_blank">
-          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-content mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">alternate_email</span>
           </div>
           <h4 class="font-display-lg text-[20px] mb-2">Twitter / X</h4>
@@ -540,7 +598,6 @@
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer class="border-t border-outline-variant/10 py-16">
     <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8">
@@ -569,6 +626,7 @@
     countries:     "10+",
     // Blokis
     blokisModes:   "3",
+    blokisDownloads: "1K+",
     // La Ronda
     larGames:      "12",
     // Dígalo con Mímica
@@ -584,7 +642,6 @@
     ashDownloads:  "376+",
     ashRating:     "5",
   };
-
   const ANIMATED = new Set(['stat-apps','stat-downloads','stat-rating','stat-years']);
   function applyStats(){
     document.querySelectorAll('[data-stat]').forEach(el=>{
@@ -594,7 +651,6 @@
     });
   }
   applyStats();
-
   function animateValue(obj, start, end, duration, suffix="") {
     let startTimestamp=null;
     const step=(timestamp)=>{
@@ -606,7 +662,6 @@
     };
     window.requestAnimationFrame(step);
   }
-
   const observer=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -619,7 +674,6 @@
     });
   },{threshold:0.5});
   observer.observe(document.getElementById('hero'));
-
   function setLang(l){
     document.querySelectorAll('.i18n-en').forEach(e=>e.style.display=l==='en'?'inline':'none');
     document.querySelectorAll('.i18n-es').forEach(e=>e.style.display=l==='es'?'inline':'none');
@@ -628,7 +682,6 @@
     try{localStorage.setItem('lang',l);}catch(e){}
   }
   try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}catch(e){}
-
   function scrollShots(btn,dir){
     const shots=btn.parentElement.querySelector('.shots');
     shots.scrollBy({left:dir*300,behavior:'smooth'});
@@ -653,7 +706,6 @@
     updateArrows();
   }
   window.addEventListener('load',()=>{document.querySelectorAll('.shots').forEach(initArrows);});
-
   window.addEventListener('scroll',()=>{
     const nav=document.querySelector('nav');
     if(window.scrollY>50) nav.classList.add('shadow-lg');
