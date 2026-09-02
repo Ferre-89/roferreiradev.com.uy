@@ -100,7 +100,6 @@
   </div>
 </nav>
 <!-- SIDEBAR -->
-<!-- SIDEBAR -->
 <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest backdrop-blur-xl border-r border-outline-variant/10 shadow-2xl hidden lg:flex flex-col z-40">
   <div class="p-8 mt-16">
     <h2 class="font-label-caps text-label-caps text-primary mb-8 opacity-50">ROOT_MENU</h2>
@@ -457,7 +456,39 @@
       </div>
       <div class="relative space-y-12">
         <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
-        <!-- Entry 0 — Blokis -->
+
+        <!-- 2026.09 — Mímica 10K (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.09</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Dígalo con Mímica — <span class="i18n-en">10,000 downloads</span><span class="i18n-es">10.000 descargas</span></h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">Crossed 10K installs on Google Play, all organic. Available in <span data-stat="mimLanguages"></span> languages.</span>
+                <span class="i18n-es">Superó las 10.000 instalaciones en Google Play, todo orgánico. Disponible en <span data-stat="mimLanguages"></span> idiomas.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.08 — Recordatorios monetización (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios — <span class="i18n-en">Hybrid Monetization</span><span class="i18n-es">Monetización híbrida</span></h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">Monthly and annual subscriptions + lifetime purchase</span><span class="i18n-es">Suscripción mensual y anual + compra única de por vida</span></li>
+                <li><span class="i18n-en">First international subscribers: USA, India, Europe</span><span class="i18n-es">Primeros suscriptores internacionales: USA, India, Europa</span></li>
+                <li><span class="i18n-en">Google Play Billing 8.2.1</span><span class="i18n-es">Google Play Billing 8.2.1</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.08</p></div>
+        </div>
+
+        <!-- 2026.07 — Blokis (derecha) -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.07</p></div>
           <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
@@ -472,12 +503,11 @@
             </div>
           </div>
         </div>
-        <!-- Entry 1 -->
+
+        <!-- 2026.05 — Mímica major update (izquierda) -->
         <div class="relative flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
-          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
-          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
-            <div class="glass-card p-6 rounded-xl border-l-2 border-primary">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Dígalo con Mímica — <span class="i18n-en">Major Update</span><span class="i18n-es">Actualización mayor</span></h4>
               <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
                 <li><span class="i18n-en">8 new categories (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> words</span><span class="i18n-es">8 categorías nuevas (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> palabras</span></li>
@@ -486,11 +516,16 @@
               </ul>
             </div>
           </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
         </div>
-        <!-- Entry 2 -->
+
+        <!-- 2026.05 — Recordatorios versión (derecha) -->
         <div class="relative flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
-            <div class="glass-card p-6 rounded-xl border-r-2 border-secondary">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V<span data-stat="recVersion"></span></h4>
               <p class="font-body-sm text-on-surface-variant">
                 <span class="i18n-en">New features, multiple alerts per reminder, additional language support. Stable production release.</span>
@@ -498,15 +533,12 @@
               </p>
             </div>
           </div>
-          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
-          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
         </div>
-        <!-- Entry 3 -->
+
+        <!-- 2026.04 — La Ronda (izquierda) -->
         <div class="relative flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-tertiary">2026.04</p></div>
-          <div class="z-10 w-4 h-4 bg-tertiary rounded-full border-4 border-[#07070d]"></div>
-          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
-            <div class="glass-card p-6 rounded-xl border-l-2 border-tertiary">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-tertiary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">La Ronda — <span class="i18n-en">Official Launch</span><span class="i18n-es">Lanzamiento oficial</span></h4>
               <p class="font-body-sm text-on-surface-variant">
                 <span class="i18n-en">Initial production release on Google Play. Party game app for groups with <span data-stat="larGames"></span> game modes.</span>
@@ -514,7 +546,10 @@
               </p>
             </div>
           </div>
+          <div class="z-10 w-4 h-4 bg-tertiary rounded-full border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-tertiary">2026.04</p></div>
         </div>
+
       </div>
     </div>
   </section>
@@ -546,11 +581,11 @@
           </div>
           <div class="p-4 glass-card rounded-lg">
             <p class="font-label-caps text-secondary text-[10px] mb-1">PHILOSOPHY</p>
-            <p class="font-code-sm"><span class="i18n-en">Ship & iterate</span><span class="i18n-es">Lanzar e iterar</span></p>
+            <p class="font-code-sm"><span class="i18n-en">Ship &amp; iterate</span><span class="i18n-es">Lanzar e iterar</span></p>
           </div>
           <div class="p-4 glass-card rounded-lg">
             <p class="font-label-caps text-tertiary text-[10px] mb-1"><span class="i18n-en">OUTSIDE CODE</span><span class="i18n-es">FUERA DEL CÓDIGO</span></p>
-            <p class="font-code-sm"><span class="i18n-en">Gym & travel</span><span class="i18n-es">Gym y viajes</span></p>
+            <p class="font-code-sm"><span class="i18n-en">Gym &amp; travel</span><span class="i18n-es">Gym y viajes</span></p>
           </div>
           <div class="p-4 glass-card rounded-lg">
             <p class="font-label-caps text-error text-[10px] mb-1">FOCUS</p>
@@ -565,11 +600,11 @@
     <div class="max-w-container-max mx-auto">
       <div class="text-center mb-16">
         <p class="font-label-caps text-label-caps text-primary mb-2 uppercase"><span class="i18n-en">Find me at</span><span class="i18n-es">Encontrame en</span></p>
-        <h2 class="font-display-lg text-headline-md"><span class="i18n-en">SOCIAL & CONTACT</span><span class="i18n-es">REDES Y CONTACTO</span></h2>
+        <h2 class="font-display-lg text-headline-md"><span class="i18n-en">SOCIAL &amp; CONTACT</span><span class="i18n-es">REDES Y CONTACTO</span></h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <a class="glass-card p-10 rounded-2xl flex flex-col items-center group hover:bg-primary/5 transition-all" href="https://x.com/RoFerreiraDev" target="_blank">
-          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-content mb-6 group-hover:scale-110 transition-transform">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">alternate_email</span>
           </div>
           <h4 class="font-display-lg text-[20px] mb-2">Twitter / X</h4>
@@ -627,7 +662,7 @@
   const STATS = {
     // Hero / About
     apps:          "5",
-    totalDownloads: 12,
+    totalDownloads: 16,
     rating:        4.6,
     years:         4,
     countries:     "10+",
@@ -640,11 +675,11 @@
     mimCategories: "24",
     mimWords:      "2200+",
     mimLanguages:  "8",
-    mimDownloads:  "5K+",
+    mimDownloads:  "10K+",
     // Mis Recordatorios
     recDownloads:  "5K+",
     recRating:     "4.6",
-    recVersion:    "8.5",
+    recVersion:    "9.3",
     // Saldo a ASH
     ashDownloads:  "376+",
     ashRating:     "5",
