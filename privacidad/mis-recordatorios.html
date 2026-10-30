@@ -55,7 +55,7 @@
 <header>
   <div>
     <h1>Política de privacidad de Mis Recordatorios</h1>
-    <p class="meta">Última actualización: octubre de 2026</p>
+    <p class="meta">Última actualización: 30 de octubre de 2026</p>
     <nav><a href="#es">Español</a><a href="#en">English</a></nav>
   </div>
 </header>
@@ -65,21 +65,23 @@
   <p>Mis Recordatorios (en inglés, My Reminders) es una app para Android desarrollada por Rodrigo Ferreira, desarrollador independiente de Uruguay (RoFerreiraDev). Esta política explica qué datos usa la app, para qué y con quién se comparten.</p>
 
   <h2>Tus recordatorios quedan en tu teléfono</h2>
-  <p>Los recordatorios, notas, listas y categorías que creás se guardan en una base de datos local dentro de tu dispositivo. No se envían a ningún servidor propio. Yo no tengo acceso a ese contenido.</p>
+  <p>Los recordatorios, notas (sub-tareas) y categorías que creás se guardan en una base de datos local dentro de tu dispositivo. No se envían a ningún servidor propio. Yo no tengo acceso a ese contenido.</p>
 
   <h2>Copia de seguridad</h2>
   <ul>
-    <li><strong>Respaldo en Google Drive (Premium).</strong> Si lo activás, la app inicia sesión con tu cuenta de Google y guarda una copia de tus recordatorios, notas y categorías en tu propio Google Drive, en un espacio privado de la app. Esa copia es solo tuya; yo no puedo verla.</li>
+    <li><strong>Respaldo en Google Drive (Premium).</strong> Si lo activás, la app inicia sesión con tu cuenta de Google y guarda una copia en la carpeta privada de la app dentro de tu propio Google Drive. La copia incluye tus recordatorios activos y eliminados (papelera), sub-tareas, categorías personalizadas y logros. El email de tu cuenta de Google solo se usa para mostrarte con qué cuenta estás conectado. Esa copia es solo tuya; yo no tengo acceso a ella.</li>
     <li><strong>Copia de seguridad de Android.</strong> Si tenés activada la copia de seguridad de Google en tu teléfono, Android puede respaldar los datos de la app en tu cuenta de Google y restaurarlos al reinstalarla. Lo gestiona Google según la configuración de tu dispositivo.</li>
   </ul>
 
   <h2>Servicios de terceros</h2>
   <ul>
-    <li><strong>Google Firebase Analytics y Crashlytics.</strong> Recogen datos de uso anónimos (por ejemplo, qué funciones se usan), información técnica del dispositivo, país aproximado e informes de errores. Sirven para entender cómo se usa la app y corregir fallos. No incluyen el texto de tus recordatorios.</li>
-    <li><strong>Google AdMob.</strong> En la versión gratuita se muestran anuncios. AdMob puede usar el identificador de publicidad del dispositivo y datos técnicos para mostrar y medir anuncios. En el Espacio Económico Europeo, el Reino Unido y Suiza, la app te pide tu consentimiento antes de mostrar anuncios personalizados, y podés cambiar tu decisión en cualquier momento desde Ajustes. Si sos usuario Premium, no se cargan anuncios.</li>
+    <li><strong>Google Firebase Analytics y Crashlytics.</strong> Recogen datos de uso seudónimos (por ejemplo, qué funciones se usan), información técnica del dispositivo, país aproximado e informes de errores. Son seudónimos porque se asocian a un identificador aleatorio de instalación (el ID de instancia de Firebase), no a tu nombre ni a tu email. En versiones anteriores a la 9.6, Firebase Analytics también recogía el identificador de publicidad del dispositivo; desde la 9.6 ya no lo hace. Sirven para entender cómo se usa la app y corregir fallos. No incluyen el texto de tus recordatorios.</li>
+    <li><strong>Google AdMob.</strong> En la versión gratuita se muestran anuncios. AdMob usa el identificador de publicidad del dispositivo y datos técnicos para mostrar y medir anuncios. En el Espacio Económico Europeo, el Reino Unido y Suiza, la app te pide tu consentimiento antes de mostrar anuncios personalizados, y podés cambiar tu decisión en cualquier momento desde Ajustes. Si sos usuario Premium, no se cargan anuncios.</li>
+    <li><strong>Google Firebase Firestore.</strong> La app solo lee configuración: mensajes informativos y el aviso de nueva versión. No escribe ni envía datos tuyos. Como cualquier conexión, la consulta lleva tu dirección IP y datos técnicos del dispositivo.</li>
     <li><strong>Google Play Billing.</strong> Las compras y suscripciones se procesan a través de Google Play. La app nunca ve tus datos de pago.</li>
     <li><strong>Reconocimiento de voz.</strong> Si usás la función de voz a texto, el audio lo procesa el servicio de reconocimiento de voz de tu teléfono (normalmente de Google). La app solo recibe el texto resultante.</li>
   </ul>
+  <p><strong>Ubicación aproximada.</strong> AdMob y Firebase usan tu dirección IP para estimar el país o la región. La app no usa tu ubicación precisa.</p>
   <p>Cada uno de estos servicios tiene su propia política: <a href="https://policies.google.com/privacy">Política de privacidad de Google</a> y <a href="https://firebase.google.com/support/privacy">Privacidad en Firebase</a>.</p>
 
   <h2>Permisos</h2>
@@ -87,7 +89,7 @@
     <li><strong>Notificaciones y alarmas exactas:</strong> para avisarte a la hora que elegiste.</li>
     <li><strong>Iniciar al encender el teléfono:</strong> para volver a programar tus recordatorios después de reiniciar.</li>
     <li><strong>Micrófono:</strong> solo cuando usás voz a texto.</li>
-    <li><strong>Internet:</strong> para anuncios, compras, respaldo en Drive y estadísticas de uso.</li>
+    <li><strong>Internet:</strong> para anuncios, compras, respaldo en Drive, estadísticas de uso, informes de errores (Crashlytics) y lectura de configuración (Firestore).</li>
   </ul>
   <p>La lectura de recordatorios en voz alta se hace con el motor de texto a voz del propio teléfono.</p>
 
@@ -99,6 +101,22 @@
 
   <h2>Tus derechos</h2>
   <p>Podés borrar todos los datos de la app desinstalándola o desde Ajustes del teléfono, y borrar tu respaldo de Drive desde tu cuenta de Google. Si estás en la Unión Europea o el Reino Unido, tenés derecho a acceder, corregir o pedir la eliminación de tus datos; para los datos que gestionan los servicios de terceros, escribime y te ayudo con el proceso.</p>
+
+  <h2 id="eliminar-datos">Eliminar tus datos</h2>
+  <p>Cómo eliminar los datos de Mis Recordatorios (en inglés, My Reminders), app de RoFerreiraDev:</p>
+  <ul>
+    <li><strong>Datos en el teléfono:</strong> desinstalá la app o borrá sus datos desde Ajustes del teléfono &gt; Aplicaciones &gt; Mis Recordatorios &gt; Almacenamiento &gt; Borrar datos. Se elimina todo lo que la app guarda localmente.</li>
+    <li><strong>Respaldo en Google Drive:</strong> en Google Drive, entrá a Configuración &gt; Administrar apps &gt; Mis Recordatorios &gt; Eliminar datos ocultos de la app.</li>
+    <li><strong>Copia de seguridad de Android:</strong> se gestiona desde la configuración de copia de seguridad del sistema de tu teléfono.</li>
+    <li><strong>Datos de Firebase Analytics y Crashlytics:</strong> escribime a <a href="mailto:ferre171717@gmail.com">ferre171717@gmail.com</a> y pido su eliminación.</li>
+  </ul>
+  <p><strong>Qué se borra y qué se conserva:</strong></p>
+  <ul>
+    <li>Los datos locales y el respaldo de Drive se borran por completo.</li>
+    <li>Los datos de Firebase Analytics se conservan hasta 14 meses, y los informes de errores de Crashlytics, 90 días.</li>
+    <li>Los datos de anuncios los gestiona Google según su política de privacidad.</li>
+    <li>Las compras y suscripciones quedan registradas en Google Play.</li>
+  </ul>
 
   <h2>Cambios</h2>
   <p>Si esta política cambia, la fecha de arriba se actualiza.</p>
@@ -112,21 +130,23 @@
   <p>My Reminders (Spanish: Mis Recordatorios) is an Android app developed by Rodrigo Ferreira, an independent developer from Uruguay (RoFerreiraDev). This policy explains what data the app uses, why, and who it is shared with.</p>
 
   <h2>Your reminders stay on your phone</h2>
-  <p>The reminders, notes, lists and categories you create are stored in a local database on your device. They are not sent to any server of mine, and I have no access to that content.</p>
+  <p>The reminders, notes (sub-tasks) and categories you create are stored in a local database on your device. They are not sent to any server of mine, and I have no access to that content.</p>
 
   <h2>Backups</h2>
   <ul>
-    <li><strong>Google Drive backup (Premium).</strong> If you turn it on, the app signs in with your Google account and saves a copy of your reminders, notes and categories in your own Google Drive, in a private app folder. That copy is yours only; I cannot see it.</li>
+    <li><strong>Google Drive backup (Premium).</strong> If you turn it on, the app signs in with your Google account and saves a copy in the app's private folder in your own Google Drive. The copy includes your active and deleted (trash) reminders, sub-tasks, custom categories and achievements. Your Google account email is only used to show you which account is connected. That copy is yours only; I have no access to it.</li>
     <li><strong>Android backup.</strong> If Google backup is enabled on your phone, Android may back up the app's data to your Google account and restore it when you reinstall. This is managed by Google according to your device settings.</li>
   </ul>
 
   <h2>Third-party services</h2>
   <ul>
-    <li><strong>Google Firebase Analytics and Crashlytics.</strong> They collect anonymous usage data (for example, which features are used), technical device information, approximate country, and crash reports. This helps me understand how the app is used and fix bugs. It does not include the text of your reminders.</li>
-    <li><strong>Google AdMob.</strong> The free version shows ads. AdMob may use the device's advertising ID and technical data to serve and measure ads. In the European Economic Area, the UK and Switzerland, the app asks for your consent before showing personalized ads, and you can change your choice at any time in Settings. Premium users are not served ads.</li>
+    <li><strong>Google Firebase Analytics and Crashlytics.</strong> They collect pseudonymous usage data (for example, which features are used), technical device information, approximate country, and crash reports. The data is pseudonymous because it is linked to a random installation identifier (the Firebase instance ID), not to your name or email. In versions before 9.6, Firebase Analytics also collected the device's advertising ID; since 9.6 it no longer does. This helps me understand how the app is used and fix bugs. It does not include the text of your reminders.</li>
+    <li><strong>Google AdMob.</strong> The free version shows ads. AdMob uses the device's advertising ID and technical data to serve and measure ads. In the European Economic Area, the UK and Switzerland, the app asks for your consent before showing personalized ads, and you can change your choice at any time in Settings. Premium users are not served ads.</li>
+    <li><strong>Google Firebase Firestore.</strong> The app only reads configuration: informational messages and the new version notice. It does not write or send any of your data. Like any connection, the request carries your IP address and technical device information.</li>
     <li><strong>Google Play Billing.</strong> Purchases and subscriptions are processed by Google Play. The app never sees your payment details.</li>
     <li><strong>Speech recognition.</strong> If you use voice to text, the audio is processed by your phone's speech recognition service (usually Google's). The app only receives the resulting text.</li>
   </ul>
+  <p><strong>Approximate location.</strong> AdMob and Firebase use your IP address to estimate your country or region. The app does not use your precise location.</p>
   <p>Each service has its own policy: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Privacy in Firebase</a>.</p>
 
   <h2>Permissions</h2>
@@ -134,7 +154,7 @@
     <li><strong>Notifications and exact alarms:</strong> to alert you at the time you chose.</li>
     <li><strong>Run at startup:</strong> to reschedule your reminders after a reboot.</li>
     <li><strong>Microphone:</strong> only when you use voice to text.</li>
-    <li><strong>Internet:</strong> for ads, purchases, Drive backup and usage statistics.</li>
+    <li><strong>Internet:</strong> for ads, purchases, Drive backup, usage statistics, crash reports (Crashlytics) and reading configuration (Firestore).</li>
   </ul>
   <p>Reading reminders aloud uses your phone's own text-to-speech engine.</p>
 
@@ -146,6 +166,22 @@
 
   <h2>Your rights</h2>
   <p>You can delete all app data by uninstalling it or from your phone's settings, and delete your Drive backup from your Google account. If you are in the EU or the UK, you have the right to access, correct or request deletion of your data; for data handled by third-party services, email me and I'll help you with the process.</p>
+
+  <h2 id="delete-data">Deleting your data</h2>
+  <p>How to delete the data of My Reminders (Spanish: Mis Recordatorios), an app by RoFerreiraDev:</p>
+  <ul>
+    <li><strong>Data on your phone:</strong> uninstall the app or clear its data from your phone's Settings &gt; Apps &gt; My Reminders &gt; Storage &gt; Clear data. Everything the app stores locally is deleted.</li>
+    <li><strong>Google Drive backup:</strong> in Google Drive, go to Settings &gt; Manage apps &gt; My Reminders &gt; Delete hidden app data.</li>
+    <li><strong>Android backup:</strong> managed from your phone's system backup settings.</li>
+    <li><strong>Firebase Analytics and Crashlytics data:</strong> email me at <a href="mailto:ferre171717@gmail.com">ferre171717@gmail.com</a> and I'll request its deletion.</li>
+  </ul>
+  <p><strong>What is deleted and what is kept:</strong></p>
+  <ul>
+    <li>Local data and the Drive backup are deleted completely.</li>
+    <li>Firebase Analytics data is kept for 14 months, and Crashlytics crash reports for 90 days.</li>
+    <li>Ad data is handled by Google under its privacy policy.</li>
+    <li>Purchases and subscriptions remain recorded in Google Play.</li>
+  </ul>
 
   <h2>Changes</h2>
   <p>If this policy changes, the date at the top will be updated.</p>
