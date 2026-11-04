@@ -270,12 +270,13 @@
         <div class="flex gap-2 flex-wrap mb-4">
           <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">PUZZLE</span>
           <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisModes"></span> <span class="i18n-en">MODES</span><span class="i18n-es">MODOS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisLevels"></span> <span class="i18n-en">LEVELS</span><span class="i18n-es">NIVELES</span></span>
           <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
           <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
-          <span class="i18n-en">Block puzzle game with 3 modes: Classic survival, 30 Levels, and Time Attack. Place pieces, complete lines, beat your records. My first Unity game — built from scratch.</span>
-          <span class="i18n-es">Juego de puzzle de bloques con 3 modos: Clásico survival, 30 Niveles y Contrarreloj. Colocá piezas, completá líneas, batí tus récords. Mi primer juego en Unity — construido desde cero.</span>
+          <span class="i18n-en">Block puzzle game with 4 modes: Classic survival, 51 levels across 6 worlds, Time Attack and a Daily Challenge with streaks — the same board for everyone. Place and rotate pieces, complete lines, beat your records. My first Unity game — built from scratch.</span>
+          <span class="i18n-es">Juego de puzzle de bloques con 4 modos: Clásico survival, 51 niveles en 6 mundos, Contrarreloj y un Desafío diario con racha — el mismo tablero para todos. Colocá y rotá piezas, completá líneas, batí tus récords. Mi primer juego en Unity — construido desde cero.</span>
         </p>
         <div class="shots-wrap mb-6">
           <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
@@ -386,11 +387,12 @@
         <div class="flex gap-2 flex-wrap mb-4">
           <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
           <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recRating"></span>★</span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recLanguages"></span> <span class="i18n-en">LANGUAGES</span><span class="i18n-es">IDIOMAS</span></span>
           <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
         </div>
         <p class="font-body-lg text-on-surface-variant mb-6">
-          <span class="i18n-en">Beautiful reminder app with categories, calendar view, widgets, and full customization. Available in multiple languages with users in Spain, Mexico, USA, Argentina, and Uruguay.</span>
-          <span class="i18n-es">App de recordatorios hermosa con categorías, vista de calendario, widgets y personalización completa. Disponible en múltiples idiomas con usuarios en España, México, USA, Argentina y Uruguay.</span>
+          <span class="i18n-en">Reminder app with categories, calendar view, widget, completed history and stats. Free, with an optional Premium plan: monthly, yearly or one-time lifetime purchase. Available in <span data-stat="recLanguages"></span> languages, including Russian, with users in India, Mexico, Brazil, USA, Ecuador and Argentina.</span>
+          <span class="i18n-es">App de recordatorios con categorías, vista de calendario, widget, historial de completados y estadísticas. Gratis, con Premium opcional: mensual, anual o compra única de por vida. Disponible en <span data-stat="recLanguages"></span> idiomas, incluido el ruso, con usuarios en India, México, Brasil, USA, Ecuador y Argentina.</span>
         </p>
         <div class="shots-wrap mb-6">
           <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
@@ -455,6 +457,53 @@
       <div class="relative space-y-12">
         <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
 
+        <!-- 2026.11 — Recordatorios 9.6 (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V9.6</h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">App language in Settings, now also in Russian</span><span class="i18n-es">Idioma de la app en Ajustes, ahora también en ruso</span></li>
+                <li><span class="i18n-en">Completed history and 4 new stats</span><span class="i18n-es">Historial de completados y 4 estadísticas nuevas</span></li>
+                <li><span class="i18n-en">Reminders every 6, 8 or 12 hours</span><span class="i18n-es">Recordatorios cada 6, 8 o 12 horas</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.11</p></div>
+        </div>
+
+        <!-- 2026.10 — Recordatorios 10K (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.10</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios — <span class="i18n-en">10,000 downloads</span><span class="i18n-es">10.000 descargas</span></h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">My first app on Google Play crossed 10K installs, all organic. The second app in the portfolio to get there.</span>
+                <span class="i18n-es">Mi primera app en Google Play superó las 10.000 instalaciones, todo orgánico. La segunda del portfolio en llegar.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.09 — Blokis 1.0.3 (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-tertiary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Blokis 1.0.3</h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">51 levels across 6 worlds, with 3 stars per chapter</span><span class="i18n-es">51 niveles en 6 mundos, con 3 estrellas por capítulo</span></li>
+                <li><span class="i18n-en">Daily Challenge with streaks: the same board for everyone</span><span class="i18n-es">Desafío diario con racha: el mismo tablero para todos</span></li>
+                <li><span class="i18n-en">Piece rotations and re-roll</span><span class="i18n-es">Rotación de piezas y re-roll</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-tertiary rounded-full border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-tertiary">2026.09</p></div>
+        </div>
+
         <!-- 2026.09 — Mímica 10K (derecha) -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.09</p></div>
@@ -494,7 +543,7 @@
             <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
               <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Blokis — <span class="i18n-en">Launch on Google Play</span><span class="i18n-es">Lanzamiento en Google Play</span></h4>
               <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
-                <li><span class="i18n-en">First Unity game — block puzzle with <span data-stat="blokisModes"></span> modes</span><span class="i18n-es">Primer juego en Unity — puzzle de bloques con <span data-stat="blokisModes"></span> modos</span></li>
+                <li><span class="i18n-en">First Unity game — block puzzle with 3 modes</span><span class="i18n-es">Primer juego en Unity — puzzle de bloques con 3 modos</span></li>
                 <li><span class="i18n-en">Classic, 30 Levels and Time Attack</span><span class="i18n-es">Clásico, 30 Niveles y Contrarreloj</span></li>
                 <li><span class="i18n-en">Premium IAP — remove ads</span><span class="i18n-es">IAP Premium — quitar anuncios</span></li>
               </ul>
@@ -518,13 +567,13 @@
           <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
         </div>
 
-        <!-- 2026.05 — Recordatorios versión (derecha) -->
+        <!-- 2026.05 — Recordatorios V8.4 (derecha) -->
         <div class="relative flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
           <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
           <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
             <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
-              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V<span data-stat="recVersion"></span></h4>
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V8.4</h4>
               <p class="font-body-sm text-on-surface-variant">
                 <span class="i18n-en">New features, multiple alerts per reminder, additional language support. Stable production release.</span>
                 <span class="i18n-es">Nuevas funcionalidades, alertas múltiples por recordatorio, soporte de idiomas adicionales. Versión estable en producción.</span>
@@ -645,10 +694,11 @@
         <span class="font-display-lg text-primary text-[24px]">ROFERREIRA.DEV</span>
         <p class="font-code-sm text-secondary text-[11px] uppercase tracking-tighter opacity-60">© 2026 ROFERREIRA.DEV // INDIE ANDROID DEVELOPER</p>
       </div>
-      <div class="flex gap-8 font-code-sm text-code-sm">
+      <div class="flex flex-wrap justify-center gap-8 font-code-sm text-code-sm">
         <a class="text-outline hover:text-on-surface transition-colors" href="https://play.google.com/store/apps/dev?id=7538562544554627896" target="_blank">Google Play</a>
         <a class="text-outline hover:text-on-surface transition-colors" href="https://x.com/RoFerreiraDev" target="_blank">X / Twitter</a>
         <a class="text-outline hover:text-on-surface transition-colors" href="https://www.instagram.com/rodri.ferreira.89" target="_blank">Instagram</a>
+        <a class="text-outline hover:text-on-surface transition-colors" href="privacidad/mis-recordatorios.html"><span class="i18n-en">Privacy</span><span class="i18n-es">Privacidad</span></a>
       </div>
     </div>
   </footer>
@@ -665,7 +715,8 @@
     years:         5,
     countries:     "10+",
     // Blokis
-    blokisModes:   "3",
+    blokisModes:   "4",
+    blokisLevels:  "51",
     blokisDownloads: "5K+",
     // La Ronda
     larGames:      "12",
@@ -677,7 +728,8 @@
     // Mis Recordatorios
     recDownloads:  "10K+",
     recRating:     "4.6",
-    recVersion:    "9.4",
+    recVersion:    "9.6",
+    recLanguages:  "10",
     // Saldo a ASH
     ashDownloads:  "376+",
     ashRating:     "5",
