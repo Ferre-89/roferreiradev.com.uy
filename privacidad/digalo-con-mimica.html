@@ -49,13 +49,14 @@
   section + section { border-top: 1px solid var(--linea); margin-top: 3rem; padding-top: 1rem; }
   ul { padding-left: 1.2rem; }
   li { margin-bottom: .4rem; }
+  code { font-size: .95em; background: var(--linea); padding: 0 .3em; border-radius: 4px; }
 </style>
 </head>
 <body>
 <header>
   <div>
     <h1>Política de privacidad de Dígalo con Mímica</h1>
-    <p class="meta">Última actualización: 4 de noviembre de 2026</p>
+    <p class="meta">Última actualización: 9 de noviembre de 2026 (versión 8.0)</p>
     <nav><a href="#es">Español</a><a href="#en">English</a></nav>
   </div>
 </header>
@@ -64,27 +65,44 @@
 <section id="es" lang="es">
   <p>Dígalo con Mímica (en inglés, Charades!) es un juego de mímica para Android desarrollado por Rodrigo Ferreira, desarrollador independiente de Uruguay (RoFerreiraDev). Esta política explica qué datos usa la app, para qué y con quién se comparten.</p>
 
+  <h2>En resumen</h2>
+  <ul>
+    <li>No pido nombre, correo, cuenta ni ubicación. No hay registro.</li>
+    <li>La app muestra anuncios de Google AdMob y usa Firebase (Google) para estadísticas de uso y reportes de fallos.</li>
+    <li>Las categorías que creás, tus récords y tus ajustes se guardan solo en tu teléfono.</li>
+    <li>Podés comprar la versión sin anuncios o ver un anuncio bonificado para jugar 3 horas sin anuncios.</li>
+  </ul>
+
   <h2>Tus partidas quedan en tu teléfono</h2>
-  <p>Tus ajustes de juego, los nombres de equipos que escribís, las categorías propias que creás y el estado de tu compra se guardan solo en tu dispositivo. No se envían a ningún servidor propio. Yo no tengo acceso a ese contenido. Si compartís una categoría propia o un resultado, la app entrega el texto a la app que elijas con el menú de compartir del sistema; yo no recibo ese contenido.</p>
+  <p>Tus categorías propias (nombre, emoji, palabras y pistas), tus récords y logros, tus favoritas, tus ajustes de partida, los nombres de equipos que escribís y el estado de tu compra se guardan solo en tu dispositivo. No se envían a ningún servidor propio. Yo no tengo acceso a ese contenido. Si compartís una categoría propia (va comprimida en un código <code>MIMICA:…</code>) o un resultado, la app entrega el texto a la app que elijas con el menú de compartir del sistema; no pasa por ningún servidor mío.</p>
 
   <h2>Copia de seguridad de Android</h2>
-  <p>Si tenés activada la copia de seguridad de Google en tu teléfono, Android puede respaldar los datos de la app en tu cuenta de Google y restaurarlos al reinstalarla. Lo gestiona Google según la configuración de tu dispositivo.</p>
+  <p>Si tenés activada la copia de seguridad de Google en tu teléfono, Android puede respaldar los datos de la app, cifrados, en tu cuenta de Google y restaurarlos al reinstalarla. Lo gestiona Google según la configuración de tu dispositivo; podés desactivarla en Ajustes de Android &gt; Copia de seguridad.</p>
 
   <h2>Servicios de terceros</h2>
   <ul>
-    <li><strong>Google Firebase Analytics y Crashlytics.</strong> Recogen datos de uso seudónimos (por ejemplo, categorías y modos jugados, palabras acertadas o salteadas, pantallas vistas y los pasos de la compra), información técnica del dispositivo, país aproximado e informes de errores. Son seudónimos, no anónimos: se asocian a un identificador aleatorio de instalación (el ID de instancia de Firebase) y Firebase Analytics también recoge el identificador de publicidad del dispositivo, no tu nombre ni tu email. Sirven para entender cómo se usa el juego y corregir fallos. No incluyen los nombres de equipos.</li>
-    <li><strong>Google AdMob.</strong> En la versión gratuita se muestran anuncios. AdMob usa el identificador de publicidad del dispositivo y datos técnicos para mostrar y medir anuncios. Podés restablecer o eliminar el identificador de publicidad desde la configuración de tu teléfono. Si compraste la versión sin anuncios, no se cargan anuncios.</li>
-    <li><strong>Google Firebase Firestore.</strong> La app solo lee configuración: mensajes informativos y el aviso de nueva versión. No escribe ni envía datos tuyos. Como cualquier conexión, la consulta lleva tu dirección IP y datos técnicos del dispositivo.</li>
-    <li><strong>TMDB (The Movie Database).</strong> Hasta la versión 7.9, las categorías de películas y series consultan TMDB para obtener títulos y pósters. La consulta pide la lista de títulos en el idioma de la app y, como cualquier conexión, lleva tu dirección IP y datos técnicos; no envía datos tuyos. Las versiones posteriores traen esa lista dentro de la app y no se conectan a TMDB. <a href="https://www.themoviedb.org/privacy-policy">Política de privacidad de TMDB</a>.</li>
-    <li><strong>Google Play Billing.</strong> La compra para quitar los anuncios se procesa a través de Google Play. La app nunca ve tus datos de pago.</li>
+    <li><strong>Google AdMob.</strong> En la versión gratuita se muestran anuncios: banners, intersticiales y, si lo elegís, un anuncio bonificado. AdMob usa el identificador de publicidad del dispositivo, tu dirección IP y datos técnicos para mostrar y medir anuncios. Los anuncios están limitados a contenido apto para todo público con orientación (clasificación PG). Podés restablecer o eliminar el identificador de publicidad desde Ajustes de Android &gt; Privacidad &gt; Anuncios. Si compraste la versión sin anuncios, no se cargan anuncios.</li>
+    <li><strong>Consentimiento para anuncios.</strong> Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, al abrir la app por primera vez te pide tu consentimiento con el formulario de Google antes de mostrar anuncios, y podés cambiarlo cuando quieras en Ajustes de la app &gt; Privacidad &gt; "Preferencias de privacidad". En el resto del mundo esa opción no aparece porque la ley no exige el formulario.</li>
+    <li><strong>Google Firebase Analytics.</strong> Recoge datos de uso seudónimos: pantallas vistas, categorías y modos jugados, partidas (rondas, aciertos, pases, salteadas), las palabras del catálogo de la app mostradas en la partida, logros, ofertas vistas, idioma de la app y si sos Premium; más información técnica del dispositivo y país aproximado. Son seudónimos porque se asocian a un identificador aleatorio de instalación (el ID de instancia de Firebase), no a tu nombre ni a tu email. Desde la versión 8.0, Firebase Analytics <strong>no</strong> recoge el identificador de publicidad del dispositivo (en versiones anteriores sí lo hacía). Sirve para saber qué palabras y funciones funcionan y mejorar el contenido. <strong>Nunca se envían</strong> las categorías ni las palabras que creás, los nombres de tus equipos ni lo que escribís o dictás en el buscador.</li>
+    <li><strong>Google Firebase Crashlytics.</strong> Si la app falla, envía un informe técnico (traza del error, modelo, versión de Android, categoría e idioma en uso) para poder arreglarlo.</li>
+    <li><strong>Google Firebase Firestore.</strong> La app solo lee configuración: el aviso de nueva versión y un mensaje informativo. No escribe ni envía datos tuyos. Como cualquier conexión, la consulta lleva tu dirección IP y datos técnicos del dispositivo.</li>
+    <li><strong>Google Play Billing.</strong> La compra para quitar los anuncios se procesa a través de Google Play; la app solo recibe la confirmación y el precio en tu moneda. Nunca ve tus datos de pago.</li>
     <li><strong>Google Play.</strong> El pedido de calificación dentro de la app y la comprobación de actualizaciones son funciones de Google Play.</li>
+    <li><strong>TMDB (The Movie Database).</strong> Hasta la versión 7.9, las categorías de películas y series consultaban TMDB para obtener títulos y pósters, y esa consulta llevaba tu dirección IP y el idioma de la app. Desde la 8.0, películas y series vienen dentro de la app y <strong>no se conecta a TMDB</strong>. <a href="https://www.themoviedb.org/privacy-policy">Política de privacidad de TMDB</a>.</li>
   </ul>
   <p><strong>Ubicación aproximada.</strong> AdMob y Firebase usan tu dirección IP para estimar el país o la región. La app no usa tu ubicación precisa.</p>
-  <p>Cada uno de estos servicios tiene su propia política: <a href="https://policies.google.com/privacy">Política de privacidad de Google</a> y <a href="https://firebase.google.com/support/privacy">Privacidad en Firebase</a>.</p>
+  <p>Todos estos datos viajan cifrados (HTTPS). Cada servicio tiene su propia política: <a href="https://policies.google.com/privacy">Política de privacidad de Google</a> y <a href="https://firebase.google.com/support/privacy">Privacidad en Firebase</a>.</p>
+
+  <h2>Funciones que usan datos del sistema</h2>
+  <ul>
+    <li><strong>Búsqueda por voz.</strong> Al tocar el micrófono del buscador se abre el reconocedor de voz de tu teléfono (normalmente la app de Google), que es quien captura y procesa el audio según su propia política. Dígalo con Mímica no pide permiso de micrófono, no graba audio y solo recibe el texto reconocido, que usa para filtrar las categorías y no guarda ni envía.</li>
+    <li><strong>Portapapeles.</strong> La app lee el portapapeles únicamente cuando tocás "Pegar categoría recibida" o "Pegar palabras", para importar una categoría o una lista de palabras. Nunca lo lee en segundo plano ni envía su contenido.</li>
+    <li><strong>Anuncio bonificado ("Noche sin anuncios").</strong> Si aceptás verlo, la app guarda en tu teléfono hasta cuándo dura el período sin anuncios (3 horas) y registra en las estadísticas que la oferta se mostró, se aceptó y se completó, sin ningún dato personal.</li>
+  </ul>
 
   <h2>Permisos</h2>
   <ul>
-    <li><strong>Internet:</strong> para anuncios, compras, estadísticas de uso, informes de errores (Crashlytics), lectura de configuración (Firestore) y, hasta la versión 7.9, películas y series (TMDB).</li>
+    <li><strong>Internet y estado de la red:</strong> para anuncios (y reintentarlos al volver la conexión), compras, estadísticas de uso, informes de errores (Crashlytics) y lectura de configuración (Firestore).</li>
   </ul>
   <p>La app no pide acceso a la cámara, al micrófono, a tus contactos ni a tu ubicación.</p>
 
@@ -100,7 +118,10 @@
   <h2 id="eliminar-datos">Eliminar tus datos</h2>
   <p>Cómo eliminar los datos de Dígalo con Mímica (en inglés, Charades!), app de RoFerreiraDev:</p>
   <ul>
-    <li><strong>Datos en el teléfono:</strong> desinstalá la app o borrá sus datos desde Ajustes del teléfono &gt; Aplicaciones &gt; Dígalo con Mímica &gt; Almacenamiento &gt; Borrar datos. Se elimina todo lo que la app guarda localmente.</li>
+    <li><strong>Récords, logros y estadísticas:</strong> Ajustes de la app &gt; Privacidad &gt; "Borrar mis estadísticas" (no toca tus categorías propias ni tus favoritas). Las categorías propias se borran una por una desde su menú.</li>
+    <li><strong>Todos los datos en el teléfono:</strong> desinstalá la app o borrá sus datos desde Ajustes del teléfono &gt; Aplicaciones &gt; Dígalo con Mímica &gt; Almacenamiento &gt; Borrar datos.</li>
+    <li><strong>Identificador de publicidad:</strong> restablecelo o eliminalo en Ajustes de Android &gt; Privacidad &gt; Anuncios.</li>
+    <li><strong>Consentimiento para anuncios</strong> (EEE, Reino Unido, Suiza): Ajustes de la app &gt; Privacidad &gt; "Preferencias de privacidad".</li>
     <li><strong>Copia de seguridad de Android:</strong> se gestiona desde la configuración de copia de seguridad del sistema de tu teléfono.</li>
     <li><strong>Datos de Firebase Analytics y Crashlytics:</strong> escribime a <a href="mailto:ferre171717@gmail.com">ferre171717@gmail.com</a> y pido su eliminación.</li>
   </ul>
@@ -123,27 +144,44 @@
   <h2 style="font-size:1.6rem;margin-top:1rem">Privacy policy for Charades!</h2>
   <p>Charades! (Spanish: Dígalo con Mímica) is a charades game for Android developed by Rodrigo Ferreira, an independent developer from Uruguay (RoFerreiraDev). This policy explains what data the app uses, why, and who it is shared with.</p>
 
+  <h2>In short</h2>
+  <ul>
+    <li>I don't ask for your name, email, account or location. There is no sign-up.</li>
+    <li>The app shows Google AdMob ads and uses Firebase (Google) for usage statistics and crash reports.</li>
+    <li>The categories you create, your records and your settings stay on your phone.</li>
+    <li>You can buy the ad-free version or watch a rewarded ad to play 3 hours without ads.</li>
+  </ul>
+
   <h2>Your games stay on your phone</h2>
-  <p>Your game settings, the team names you type, the custom categories you create and your purchase status are stored only on your device. They are not sent to any server of mine, and I have no access to that content. If you share a custom category or a result, the app hands the text to the app you choose through the system share menu; I don't receive that content.</p>
+  <p>Your own categories (name, emoji, words and hints), your records and achievements, your favorites, your game settings, the team names you type and your purchase status are stored only on your device. They are not sent to any server of mine, and I have no access to that content. If you share a custom category (compressed into a <code>MIMICA:…</code> code) or a result, the app hands the text to the app you choose through the system share menu; it does not go through any server of mine.</p>
 
   <h2>Android backup</h2>
-  <p>If Google backup is enabled on your phone, Android may back up the app's data to your Google account and restore it when you reinstall. This is managed by Google according to your device settings.</p>
+  <p>If Google backup is enabled on your phone, Android may back up the app's data, encrypted, to your Google account and restore it when you reinstall. This is managed by Google according to your device settings; you can turn it off in Android Settings &gt; Backup.</p>
 
   <h2>Third-party services</h2>
   <ul>
-    <li><strong>Google Firebase Analytics and Crashlytics.</strong> They collect pseudonymous usage data (for example, categories and modes played, words guessed or skipped, screens viewed and the purchase steps), technical device information, approximate country, and crash reports. The data is pseudonymous, not anonymous: it is linked to a random installation identifier (the Firebase instance ID), and Firebase Analytics also collects the device's advertising ID, not your name or email. This helps me understand how the game is used and fix bugs. It does not include team names.</li>
-    <li><strong>Google AdMob.</strong> The free version shows ads. AdMob uses the device's advertising ID and technical data to serve and measure ads. You can reset or delete the advertising ID in your phone's settings. If you bought the ad-free version, no ads are loaded.</li>
-    <li><strong>Google Firebase Firestore.</strong> The app only reads configuration: informational messages and the new version notice. It does not write or send any of your data. Like any connection, the request carries your IP address and technical device information.</li>
-    <li><strong>TMDB (The Movie Database).</strong> Up to version 7.9, the movie and TV categories query TMDB to get titles and posters. The request asks for the list of titles in the app language and, like any connection, carries your IP address and technical data; it does not send any of your data. Later versions include that list in the app and do not connect to TMDB. <a href="https://www.themoviedb.org/privacy-policy">TMDB privacy policy</a>.</li>
-    <li><strong>Google Play Billing.</strong> The purchase to remove ads is processed by Google Play. The app never sees your payment details.</li>
+    <li><strong>Google AdMob.</strong> The free version shows ads: banners, interstitials and, if you choose, a rewarded ad. AdMob uses the device's advertising ID, your IP address and technical data to serve and measure ads. Ads are limited to content suitable for general audiences with parental guidance (PG rating). You can reset or delete the advertising ID in Android Settings &gt; Privacy &gt; Ads. If you bought the ad-free version, no ads are loaded.</li>
+    <li><strong>Ads consent.</strong> If you are in the European Economic Area, the United Kingdom or Switzerland, the first time you open the app it asks for your consent with Google's form before showing ads, and you can change it any time in the app's Settings &gt; Privacy &gt; "Privacy preferences". Elsewhere this option does not appear because the form is not required by law.</li>
+    <li><strong>Google Firebase Analytics.</strong> It collects pseudonymous usage data: screens viewed, categories and modes played, games (rounds, correct guesses, passes, skips), the words from the app's own catalogue shown during a game, achievements, offers shown, app language and whether you are Premium; plus technical device information and approximate country. The data is pseudonymous because it is linked to a random installation identifier (the Firebase instance ID), not to your name or email. Since version 8.0, Firebase Analytics does <strong>not</strong> collect the device's advertising ID (earlier versions did). This helps me learn which words and features work and improve the content. <strong>It never sends</strong> the categories or words you create, your team names, or what you type or dictate in the search box.</li>
+    <li><strong>Google Firebase Crashlytics.</strong> If the app crashes, it sends a technical report (stack trace, device model, Android version, category and language in use) so I can fix it.</li>
+    <li><strong>Google Firebase Firestore.</strong> The app only reads configuration: the new-version notice and an informational message. It does not write or send any of your data. Like any connection, the request carries your IP address and technical device information.</li>
+    <li><strong>Google Play Billing.</strong> The purchase to remove ads is processed by Google Play; the app only receives the confirmation and the price in your currency. It never sees your payment details.</li>
     <li><strong>Google Play.</strong> The in-app rating prompt and the update check are Google Play features.</li>
+    <li><strong>TMDB (The Movie Database).</strong> Up to version 7.9, the movie and TV categories queried TMDB for titles and posters, and that request carried your IP address and the app language. Since 8.0, movies and TV shows ship inside the app and it <strong>does not connect to TMDB</strong>. <a href="https://www.themoviedb.org/privacy-policy">TMDB privacy policy</a>.</li>
   </ul>
   <p><strong>Approximate location.</strong> AdMob and Firebase use your IP address to estimate your country or region. The app does not use your precise location.</p>
-  <p>Each service has its own policy: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Privacy in Firebase</a>.</p>
+  <p>All of this data travels encrypted (HTTPS). Each service has its own policy: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Privacy in Firebase</a>.</p>
+
+  <h2>Features that use system data</h2>
+  <ul>
+    <li><strong>Voice search.</strong> Tapping the microphone in the search box opens your phone's speech recognizer (usually the Google app), which captures and processes the audio under its own policy. Charades! does not request the microphone permission, does not record audio, and only receives the recognized text, which it uses to filter categories and does not store or send.</li>
+    <li><strong>Clipboard.</strong> The app reads the clipboard only when you tap "Paste received category" or "Paste words", to import a category or a list of words. It never reads it in the background and never sends its content.</li>
+    <li><strong>Rewarded ad ("Ad-free night").</strong> If you accept to watch it, the app stores on your phone when the ad-free period (3 hours) ends and records in the statistics that the offer was shown, accepted and completed, without any personal data.</li>
+  </ul>
 
   <h2>Permissions</h2>
   <ul>
-    <li><strong>Internet:</strong> for ads, purchases, usage statistics, crash reports (Crashlytics), reading configuration (Firestore) and, up to version 7.9, movies and TV shows (TMDB).</li>
+    <li><strong>Internet and network state:</strong> for ads (and retrying them when the connection returns), purchases, usage statistics, crash reports (Crashlytics) and reading configuration (Firestore).</li>
   </ul>
   <p>The app does not ask for access to your camera, microphone, contacts or location.</p>
 
@@ -159,7 +197,10 @@
   <h2 id="delete-data">Deleting your data</h2>
   <p>How to delete the data of Charades! (Spanish: Dígalo con Mímica), an app by RoFerreiraDev:</p>
   <ul>
-    <li><strong>Data on your phone:</strong> uninstall the app or clear its data from your phone's Settings &gt; Apps &gt; Charades! &gt; Storage &gt; Clear data. Everything the app stores locally is deleted.</li>
+    <li><strong>Records, achievements and statistics:</strong> app Settings &gt; Privacy &gt; "Delete my statistics" (your own categories and favorites are not affected). Custom categories are deleted one by one from their menu.</li>
+    <li><strong>All data on your phone:</strong> uninstall the app or clear its data from your phone's Settings &gt; Apps &gt; Charades! &gt; Storage &gt; Clear data.</li>
+    <li><strong>Advertising ID:</strong> reset or delete it in Android Settings &gt; Privacy &gt; Ads.</li>
+    <li><strong>Ads consent</strong> (EEA, UK, Switzerland): app Settings &gt; Privacy &gt; "Privacy preferences".</li>
     <li><strong>Android backup:</strong> managed from your phone's system backup settings.</li>
     <li><strong>Firebase Analytics and Crashlytics data:</strong> email me at <a href="mailto:ferre171717@gmail.com">ferre171717@gmail.com</a> and I'll request its deletion.</li>
   </ul>
