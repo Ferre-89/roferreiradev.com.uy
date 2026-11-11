@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoFerreiraDev — Indie Android Developer from Uruguay</title>
+<meta name="description" content="Solo Android developer from Uruguay. 5 apps on Google Play. Building in public."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPFRSMV4FL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WPFRSMV4FL');</script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error":"#ffb4ab","on-secondary-container":"#bea8ff","secondary-fixed-dim":"#cebdff",
+          "inverse-surface":"#e4e1eb","secondary":"#cebdff","surface-dim":"#131319",
+          "surface-bright":"#393840","inverse-on-surface":"#303037","on-secondary-fixed":"#21005e",
+          "surface-variant":"#35343b","surface-container-lowest":"#0e0e14","on-tertiary-fixed":"#002113",
+          "on-primary-fixed-variant":"#00513a","on-surface":"#e4e1eb","primary-fixed-dim":"#62dcad",
+          "tertiary-container":"#5ceaae","on-error":"#690005","on-secondary-fixed-variant":"#4f319c",
+          "surface-container-low":"#1b1b22","primary-fixed":"#80f9c8","surface-container-highest":"#35343b",
+          "primary":"#aaffd8","primary-container":"#6ee7b7","error-container":"#93000a",
+          "secondary-fixed":"#e8ddff","on-background":"#e4e1eb","on-surface-variant":"#bccac1",
+          "tertiary":"#aeffd5","on-primary-fixed":"#002115","on-tertiary-container":"#006746",
+          "surface-tint":"#62dcad","outline-variant":"#3d4a43","tertiary-fixed":"#6ffbbe",
+          "inverse-primary":"#006c4e","surface":"#131319","outline":"#86948c",
+          "on-primary-container":"#006649","surface-container-high":"#2a2930","background":"#131319",
+          "on-secondary":"#381385","surface-container":"#1f1f26","tertiary-fixed-dim":"#4edea3",
+          "on-tertiary-fixed-variant":"#005236","secondary-container":"#4f319c","on-primary":"#003827",
+          "on-tertiary":"#003824","on-error-container":"#ffdad6"
+        },
+        borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+        spacing:{"gutter":"24px","section-gap":"120px","unit":"8px","margin-mobile":"20px","container-max":"1200px"},
+        fontFamily:{
+          "display-lg-mobile":["Outfit"],"label-caps":["JetBrains Mono"],"body-sm":["Hanken Grotesk"],
+          "headline-md":["Outfit"],"body-lg":["Hanken Grotesk"],"display-lg":["Outfit"],"code-sm":["JetBrains Mono"]
+        },
+        fontSize:{
+          "display-lg-mobile":["40px",{"lineHeight":"1.2","fontWeight":"700"}],
+          "label-caps":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"700"}],
+          "body-sm":["14px",{"lineHeight":"1.5","fontWeight":"400"}],
+          "headline-md":["32px",{"lineHeight":"1.3","fontWeight":"600"}],
+          "body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],
+          "display-lg":["64px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],
+          "code-sm":["13px",{"lineHeight":"1.4","fontWeight":"500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body{background-color:#07070d;overflow-x:hidden;scroll-behavior:smooth;}
+  .glass-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);}
+  .neon-glow-primary{box-shadow:0 0 40px -10px rgba(110,231,183,0.3);}
+  .neon-glow-secondary{box-shadow:0 0 40px -10px rgba(206,189,255,0.3);}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  .i18n-en{display:inline;}.i18n-es{display:none;}
+  .lang-btn{background:none;border:none;color:rgba(188,202,193,0.6);font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;padding:5px 10px;cursor:pointer;transition:all 0.2s;}
+  .lang-btn.active{background:#aaffd8;color:#07070d;border-radius:6px;}
+  .lang-btn:hover:not(.active){color:#e4e1eb;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;}
+  .shots{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-behavior:smooth;}
+  .shots::-webkit-scrollbar{display:none;}
+  .shots img{height:280px;border-radius:12px;scroll-snap-align:start;flex-shrink:0;border:1px solid rgba(255,255,255,0.05);transition:transform 0.3s;}
+  .shots img:hover{transform:scale(1.03);}
+  .shots-wrap{position:relative;}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);color:#e4e1eb;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:all 0.2s;font-size:1.1rem;backdrop-filter:blur(8px);}
+  .arrow:hover{background:rgba(255,255,255,0.15);}
+  .arrow-l{left:8px;}.arrow-r{right:8px;}
+  .quick-link{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:#e4e1eb;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.05em;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+  .quick-link:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+  .quick-link img{width:20px;height:20px;border-radius:5px;object-fit:cover;}
+  .quick-link-social{color:rgba(188,202,193,0.7);}
+  .quick-link-social:hover{color:#e4e1eb;}
+</style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-lg border-b border-outline-variant/20 h-16">
+  <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="font-display-lg text-headline-md tracking-tighter text-primary">ROFERREIRA.DEV</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#quicklinks">Apps</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#changelog">Changelog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#social">Social</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+      <div class="lang-toggle">
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+    <button class="md:hidden text-primary"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+<!-- SIDEBAR -->
+<aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest backdrop-blur-xl border-r border-outline-variant/10 shadow-2xl hidden lg:flex flex-col z-40">
+  <div class="p-8 mt-16">
+    <h2 class="font-label-caps text-label-caps text-primary mb-8 opacity-50">ROOT_MENU</h2>
+    <div class="flex flex-col space-y-2">
+      <a class="bg-primary/15 text-primary border-l-4 border-primary rounded-r-xl py-3 px-6 flex items-center gap-4 hover:translate-x-1 transition-transform" href="#hero">
+        <span class="material-symbols-outlined">rocket_launch</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">Hero</span><span class="i18n-es">Inicio</span></span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#quicklinks">
+        <span class="material-symbols-outlined">grid_view</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">Quick Links</span><span class="i18n-es">Links rápidos</span></span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#apps">
+        <span class="material-symbols-outlined">android</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">Apps</span><span class="i18n-es">Apps</span></span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#changelog">
+        <span class="material-symbols-outlined">history</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">Changelog</span><span class="i18n-es">Historial</span></span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#social">
+        <span class="material-symbols-outlined">share</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">Social</span><span class="i18n-es">Social</span></span>
+      </a>
+      <a class="text-on-surface-variant py-3 px-6 flex items-center gap-4 hover:bg-surface-variant/50 transition-colors" href="#about">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-label-caps text-label-caps"><span class="i18n-en">About</span><span class="i18n-es">Sobre mí</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+<main class="lg:ml-72 pt-16">
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center px-gutter py-section-gap overflow-hidden" id="hero">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <img alt="Hero visual" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo0ycHkL388vbRYp7ldJt3z-nt9AS9bIN6HDB5jBY8Mkg5fOLWHj-gX2O1TTgCsDqHhm9q6DZ1cpqz4NAEzOOf7-TGnra5qtP1aV1jTeQXpESDWVgt1lghqfK9rhdESxHYUO207mmowLVzAie4nDMfAoZWjGipai3r1R3ty_S_i91OnL76DkFxdiznJ4OUMtAAeMbalPqPKET-XeaP9XA3lsuWF3TNheEzJCyBak6Vnd-SeYzkhG2xBfo3_lDvFdRuewBgS7aEyw"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#07070d] via-transparent to-[#07070d]"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl text-center space-y-8">
+      <div class="inline-block px-4 py-2 glass-card rounded-full neon-glow-primary border-primary/20 mb-4">
+        <p class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">
+          <span class="i18n-en">Status: Online &amp; Building</span><span class="i18n-es">Estado: Online y Construyendo</span>
+        </p>
+      </div>
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+        <span class="i18n-en">I build Android apps that <span class="text-primary italic">solve real problems</span></span>
+        <span class="i18n-es">Creo apps Android que <span class="text-primary italic">resuelven problemas reales</span></span>
+      </h1>
+      <p class="font-body-lg text-on-surface-variant max-w-xl mx-auto">
+        <span class="i18n-en">Solo developer from Uruguay. <span data-stat="years"></span> years building for Android. Games and apps for LATAM 🌎. No investors, no team — just code, users, and honest work.</span>
+        <span class="i18n-es">Desarrollador independiente de Uruguay. <span data-stat="years"></span> años con Android. Juegos y apps para LATAM 🌎. Sin inversores, sin equipo — solo código, usuarios y trabajo honesto.</span>
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+        <div class="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
+          <p class="font-label-caps text-display-lg-mobile text-primary-container" id="stat-apps">0</p>
+          <p class="font-label-caps text-[10px] opacity-60 uppercase tracking-widest mt-2"><span class="i18n-en">Apps on Play Store</span><span class="i18n-es">Apps en Play Store</span></p>
+        </div>
+        <div class="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
+          <p class="font-label-caps text-display-lg-mobile text-secondary" id="stat-downloads">0</p>
+          <p class="font-label-caps text-[10px] opacity-60 uppercase tracking-widest mt-2"><span class="i18n-en">Total Downloads</span><span class="i18n-es">Descargas totales</span></p>
+        </div>
+        <div class="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
+          <p class="font-label-caps text-display-lg-mobile text-tertiary" id="stat-rating">0</p>
+          <p class="font-label-caps text-[10px] opacity-60 uppercase tracking-widest mt-2"><span class="i18n-en">Average Rating</span><span class="i18n-es">Rating promedio</span></p>
+        </div>
+        <div class="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
+          <p class="font-label-caps text-display-lg-mobile text-error" id="stat-years">0</p>
+          <p class="font-label-caps text-[10px] opacity-60 uppercase tracking-widest mt-2"><span class="i18n-en">Years Experience</span><span class="i18n-es">Años de experiencia</span></p>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-center gap-6">
+        <a class="px-10 py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-105 transition-all neon-glow-primary flex items-center gap-3" href="#quicklinks">
+          <span class="i18n-en">EXPLORE APPS</span><span class="i18n-es">VER APPS</span>
+          <span class="material-symbols-outlined">arrow_downward</span>
+        </a>
+        <a class="px-10 py-4 border border-secondary text-secondary font-bold rounded-xl hover:bg-secondary/10 transition-all flex items-center gap-3" href="#contact">
+          <span class="i18n-en">WORK WITH ME</span><span class="i18n-es">TRABAJEMOS JUNTOS</span>
+          <span class="material-symbols-outlined">mail</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="px-gutter pb-16 max-w-container-max mx-auto" id="quicklinks">
+    <div class="glass-card rounded-2xl p-6 md:p-8">
+      <p class="font-label-caps text-label-caps text-primary opacity-50 mb-5 uppercase">
+        <span class="i18n-en">Quick Access</span><span class="i18n-es">Acceso rápido</span>
+      </p>
+      <!-- Apps -->
+      <div class="mb-4">
+        <p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-3">
+          <span class="i18n-en">Apps on Google Play</span><span class="i18n-es">Apps en Google Play</span>
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.blokis" target="_blank">
+            <img src="img/icon_blok.png" alt="Blokis"/>
+            🎮 Blokis
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="blokisDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.laronda" target="_blank">
+            <img src="img/icon_lar.png" alt="La Ronda"/>
+            🎲 La Ronda
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=com.roferreiradev.digaloconmimica" target="_blank">
+            <img src="img/icon_mim.png" alt="Dígalo con Mímica"/>
+            🎭 Dígalo con Mímica
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="mimDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=aplicacion.de.recordatorios" target="_blank">
+            <img src="img/icon_rec.png" alt="Mis Recordatorios"/>
+            📋 Mis Recordatorios
+            <span class="text-secondary opacity-60 text-[10px]"><span data-stat="recDownloads"></span></span>
+          </a>
+          <a class="quick-link" href="https://play.google.com/store/apps/details?id=saldoanimales.sin.hogar" target="_blank">
+            <img src="img/icon_ash.png" alt="Saldo a ASH"/>
+            🐾 Saldo a ASH
+          </a>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-outline-variant/20 my-4"></div>
+      <!-- Social -->
+      <div>
+        <p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-3">Social</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="quick-link quick-link-social" href="https://x.com/RoFerreiraDev" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">alternate_email</span> @RoFerreiraDev
+          </a>
+          <a class="quick-link quick-link-social" href="https://www.instagram.com/rodri.ferreira.89" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">photo_camera</span> @rodri.ferreira.89
+          </a>
+          <a class="quick-link quick-link-social" href="https://www.linkedin.com/in/rodrigoferreira1989/" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">link</span> LinkedIn
+          </a>
+          <a class="quick-link quick-link-social" href="https://play.google.com/store/apps/dev?id=7538562544554627896" target="_blank">
+            <span class="material-symbols-outlined text-[16px]">android</span> Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section class="px-gutter py-section-gap max-w-container-max mx-auto" id="apps">
+    <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16 border-l-4 border-primary pl-8">
+      <div>
+        <p class="font-label-caps text-label-caps text-primary mb-2 uppercase"><span class="i18n-en">Portfolio</span><span class="i18n-es">Portafolio</span></p>
+        <h2 class="font-display-lg text-headline-md text-on-surface"><span class="i18n-en">WHAT I'VE SHIPPED</span><span class="i18n-es">LO QUE HE PUBLICADO</span></h2>
+      </div>
+      <div class="font-code-sm text-code-sm text-outline uppercase tracking-tighter">Built with Java, Kotlin &amp; Unity · Android</div>
+    </div>
+    <div class="flex flex-col gap-8">
+      <!-- BLOKIS -->
+      <div class="glass-card rounded-2xl p-8 hover:border-secondary/30 transition-all hover:-translate-y-1">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_blok.png" alt="Blokis icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 flex-wrap">
+              <h3 class="font-display-lg text-[22px]">Blokis</h3>
+              <span class="px-3 py-1 bg-secondary/20 border border-secondary/30 text-secondary text-[10px] font-label-caps rounded-full">NEW</span>
+            </div>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase"><span class="i18n-en">Block Puzzle — Casual Game · Unity</span><span class="i18n-es">Puzzle de bloques — Juego casual · Unity</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]">PUZZLE</span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisModes"></span> <span class="i18n-en">MODES</span><span class="i18n-es">MODOS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisLevels"></span> <span class="i18n-en">LEVELS</span><span class="i18n-es">NIVELES</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="blokisDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">Block puzzle game with 4 modes: Classic survival, 51 levels across 6 worlds, Time Attack and a Daily Challenge with streaks — the same board for everyone. Place and rotate pieces, complete lines, beat your records. My first Unity game — built from scratch.</span>
+          <span class="i18n-es">Juego de puzzle de bloques con 4 modos: Clásico survival, 51 niveles en 6 mundos, Contrarreloj y un Desafío diario con racha — el mismo tablero para todos. Colocá y rotá piezas, completá líneas, batí tus récords. Mi primer juego en Unity — construido desde cero.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/blok_1.png" alt="Blokis - Home">
+            <img src="img/blok_2.png" alt="Blokis - Classic mode">
+            <img src="img/blok_3.png" alt="Blokis - Levels">
+            <img src="img/blok_4.png" alt="Blokis - Time Attack">
+            <img src="img/blok_5.jpg" alt="Blokis - Combo">
+            <img src="img/blok_6.jpg" alt="Blokis - Records">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.roferreiradev.blokis" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-secondary/10 border border-secondary/20 text-secondary rounded-xl font-label-caps text-label-caps hover:bg-secondary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
+      <!-- La Ronda -->
+      <div class="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all hover:-translate-y-1">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_lar.png" alt="La Ronda icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 flex-wrap">
+              <h3 class="font-display-lg text-[22px]">La Ronda: Juegos con Amigos</h3>
+            </div>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase"><span class="i18n-en">Party Games — Group Entertainment</span><span class="i18n-es">Juegos de fiesta — Entretenimiento grupal</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">PARTY GAME</span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]">FREE + PRO</span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span data-stat="larGames"></span> <span class="i18n-en">GAMES</span><span class="i18n-es">JUEGOS</span></span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">The ultimate party game app for groups. Truth or Dare, Tutti Frutti, Never Have I Ever, Who's Most Likely, Bomb Question, Taboo, What Would You Rather, The Impostor and more. Free to play, Pro to remove ads.</span>
+          <span class="i18n-es">La app de juegos grupales definitiva. Verdad o Reto, Tutti Frutti, Yo Nunca, ¿Quién es más probable?, Pregunta Bomba, Tabú, ¿Qué Preferís?, El Impostor y más. Gratis para jugar, Pro para quitar los anuncios.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/lar_1.png" alt="La Ronda - Home">
+            <img src="img/lar_2.png" alt="La Ronda - Game selection">
+            <img src="img/lar_3.png" alt="La Ronda - Truth or Dare">
+            <img src="img/lar_4.png" alt="La Ronda - Tutti Frutti">
+            <img src="img/lar_5.png" alt="La Ronda - Never Have I Ever">
+            <img src="img/lar_6.png" alt="La Ronda - Who's Most Likely">
+            <img src="img/lar_7.png" alt="La Ronda - Bomb Question">
+            <img src="img/lar_8.png" alt="La Ronda - The Impostor">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.roferreiradev.laronda" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20 text-primary rounded-xl font-label-caps text-label-caps hover:bg-primary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
+      <!-- Dígalo con Mímica -->
+      <div class="glass-card rounded-2xl p-8 hover:border-secondary/30 transition-all hover:-translate-y-1">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_mim.png" alt="Dígalo con Mímica icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display-lg text-[22px]">Dígalo con Mímica</h3>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase"><span class="i18n-en">Charades! — Party Game</span><span class="i18n-es">¡Charadas! — Juego de fiesta</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimCategories"></span> <span class="i18n-en">CATEGORIES</span><span class="i18n-es">CATEGORÍAS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimWords"></span> <span class="i18n-en">WORDS</span><span class="i18n-es">PALABRAS</span></span>
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-lg font-label-caps text-[10px]"><span data-stat="mimLanguages"></span> <span class="i18n-en">LANGUAGES</span><span class="i18n-es">IDIOMAS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span data-stat="mimDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">Charades for groups. <span data-stat="mimCategories"></span> categories, <span data-stat="mimWords"></span> words, <span data-stat="mimLanguages"></span> languages. Built for LATAM. No subscriptions — fair monetization.</span>
+          <span class="i18n-es">Charadas para grupos. <span data-stat="mimCategories"></span> categorías, <span data-stat="mimWords"></span> palabras, <span data-stat="mimLanguages"></span> idiomas. Hecho para LATAM. Sin suscripciones — monetización justa.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/mim_1.png" alt="Dígalo con Mímica - Home">
+            <img src="img/mim_2.png" alt="Dígalo con Mímica - Categories">
+            <img src="img/mim_3.png" alt="Dígalo con Mímica - Movie round">
+            <img src="img/mim_4.png" alt="Dígalo con Mímica - Animals">
+            <img src="img/mim_5.png" alt="Dígalo con Mímica - Random mode">
+            <img src="img/mim_6.png" alt="Dígalo con Mímica - Game modes">
+            <img src="img/mim_7.png" alt="Dígalo con Mímica - Results">
+            <img src="img/mim_8.png" alt="Dígalo con Mímica - Game setup">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.roferreiradev.digaloconmimica" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-secondary/10 border border-secondary/20 text-secondary rounded-xl font-label-caps text-label-caps hover:bg-secondary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
+      <!-- Mis Recordatorios -->
+      <div class="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all hover:-translate-y-1">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_rec.png" alt="Mis Recordatorios icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display-lg text-[22px]">Mis Recordatorios</h3>
+            <p class="font-code-sm text-[10px] text-outline mt-1 uppercase">V<span data-stat="recVersion"></span> STABLE · <span class="i18n-en">My Reminders — Productivity</span><span class="i18n-es">Recordatorios — Productividad</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recRating"></span>★</span>
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-label-caps text-[10px]"><span data-stat="recLanguages"></span> <span class="i18n-en">LANGUAGES</span><span class="i18n-es">IDIOMAS</span></span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]">FREE + PREMIUM</span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">Reminder app with categories, calendar view, widget, completed history and stats. Free, with an optional Premium plan: monthly, yearly or one-time lifetime purchase. Available in <span data-stat="recLanguages"></span> languages, including Russian, with users in India, Mexico, Brazil, USA, Ecuador and Argentina.</span>
+          <span class="i18n-es">App de recordatorios con categorías, vista de calendario, widget, historial de completados y estadísticas. Gratis, con Premium opcional: mensual, anual o compra única de por vida. Disponible en <span data-stat="recLanguages"></span> idiomas, incluido el ruso, con usuarios en India, México, Brasil, USA, Ecuador y Argentina.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/rec_1.png" alt="Mis Recordatorios - Home screen">
+            <img src="img/rec_2.png" alt="Mis Recordatorios - New reminder">
+            <img src="img/rec_3.png" alt="Mis Recordatorios - Calendar view">
+            <img src="img/rec_4.png" alt="Mis Recordatorios - Statistics">
+            <img src="img/rec_5.png" alt="Mis Recordatorios - Settings">
+            <img src="img/rec_6.png" alt="Mis Recordatorios - Widget">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=aplicacion.de.recordatorios" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20 text-primary rounded-xl font-label-caps text-label-caps hover:bg-primary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
+      <!-- Saldo a ASH -->
+      <div class="glass-card rounded-2xl p-8 border-l-4 border-tertiary/40 hover:-translate-y-1 transition-all">
+        <div class="flex items-start gap-6 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-outline-variant/20">
+            <img src="img/icon_ash.png" alt="Saldo a ASH icon" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display-lg text-[22px]">Saldo a ASH</h3>
+            <p class="font-code-sm text-[10px] text-tertiary mt-1 uppercase"><span class="i18n-en">SMS Donations — Social Impact</span><span class="i18n-es">Donaciones por SMS — Impacto social</span></p>
+          </div>
+        </div>
+        <div class="flex gap-2 flex-wrap mb-4">
+          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]"><span data-stat="ashDownloads"></span> <span class="i18n-en">DOWNLOADS</span><span class="i18n-es">DESCARGAS</span></span>
+          <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-lg font-label-caps text-[10px]"><span data-stat="ashRating"></span>★</span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-lg font-label-caps text-[10px]"><span class="i18n-en">ADOPTED BY NONPROFIT</span><span class="i18n-es">ADOPTADA POR ONG</span></span>
+        </div>
+        <p class="font-body-lg text-on-surface-variant mb-6">
+          <span class="i18n-en">Donate your leftover phone credit to Animales Sin Hogar (ASH), a nonprofit shelter in Montevideo caring for 1,300+ rescued animals. One tap — no bank account needed, no sign-up required.</span>
+          <span class="i18n-es">Doná tu saldo telefónico a Animales Sin Hogar (ASH), refugio en Montevideo con 1.300+ animales rescatados. Un toque — sin cuenta bancaria, sin registro.</span>
+        </p>
+        <div class="shots-wrap mb-6">
+          <button class="arrow arrow-l" onclick="scrollShots(this,-1)">&#8249;</button>
+          <div class="shots">
+            <img src="img/ash_1.png" alt="Saldo a ASH - Main screen">
+            <img src="img/ash_2.png" alt="Saldo a ASH - Confirmar envío">
+            <img src="img/ash_3.png" alt="Saldo a ASH - Enviando">
+            <img src="img/ash_4.png" alt="Saldo a ASH - Envío completado">
+            <img src="img/ash_5.png" alt="Saldo a ASH - Sobre la app">
+          </div>
+          <button class="arrow arrow-r" onclick="scrollShots(this,1)">&#8250;</button>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=saldoanimales.sin.hogar" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-tertiary/10 border border-tertiary/20 text-tertiary rounded-xl font-label-caps text-label-caps hover:bg-tertiary/20 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">android</span> GOOGLE PLAY
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- CHANGELOG -->
+  <section class="bg-surface-container-lowest py-section-gap" id="changelog">
+    <div class="px-gutter max-w-container-max mx-auto">
+      <div class="text-center mb-24">
+        <h2 class="font-display-lg text-headline-md tracking-widest text-primary mb-4">COMMIT HISTORY</h2>
+        <div class="h-1 w-24 bg-primary mx-auto rounded-full neon-glow-primary"></div>
+      </div>
+      <div class="relative space-y-12">
+        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
+
+        <!-- 2026.11 — Recordatorios 9.6 (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V9.6</h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">App language in Settings, now also in Russian</span><span class="i18n-es">Idioma de la app en Ajustes, ahora también en ruso</span></li>
+                <li><span class="i18n-en">Completed history and 4 new stats</span><span class="i18n-es">Historial de completados y 4 estadísticas nuevas</span></li>
+                <li><span class="i18n-en">Reminders every 6, 8 or 12 hours</span><span class="i18n-es">Recordatorios cada 6, 8 o 12 horas</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.11</p></div>
+        </div>
+
+        <!-- 2026.10 — Recordatorios 10K (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.10</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios — <span class="i18n-en">10,000 downloads</span><span class="i18n-es">10.000 descargas</span></h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">My first app on Google Play crossed 10K installs, all organic. The second app in the portfolio to get there.</span>
+                <span class="i18n-es">Mi primera app en Google Play superó las 10.000 instalaciones, todo orgánico. La segunda del portfolio en llegar.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.09 — Blokis 1.0.3 (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-tertiary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Blokis 1.0.3</h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">51 levels across 6 worlds, with 3 stars per chapter</span><span class="i18n-es">51 niveles en 6 mundos, con 3 estrellas por capítulo</span></li>
+                <li><span class="i18n-en">Daily Challenge with streaks: the same board for everyone</span><span class="i18n-es">Desafío diario con racha: el mismo tablero para todos</span></li>
+                <li><span class="i18n-en">Piece rotations and re-roll</span><span class="i18n-es">Rotación de piezas y re-roll</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-tertiary rounded-full border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-tertiary">2026.09</p></div>
+        </div>
+
+        <!-- 2026.09 — Mímica 10K (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.09</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Dígalo con Mímica — <span class="i18n-en">10,000 downloads</span><span class="i18n-es">10.000 descargas</span></h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">Crossed 10K installs on Google Play, all organic. Available in <span data-stat="mimLanguages"></span> languages.</span>
+                <span class="i18n-es">Superó las 10.000 instalaciones en Google Play, todo orgánico. Disponible en <span data-stat="mimLanguages"></span> idiomas.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.08 — Recordatorios monetización (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios — <span class="i18n-en">Hybrid Monetization</span><span class="i18n-es">Monetización híbrida</span></h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">Monthly and annual subscriptions + lifetime purchase</span><span class="i18n-es">Suscripción mensual y anual + compra única de por vida</span></li>
+                <li><span class="i18n-en">First international subscribers: USA, India, Europe</span><span class="i18n-es">Primeros suscriptores internacionales: USA, India, Europa</span></li>
+                <li><span class="i18n-en">Google Play Billing 8.2.1</span><span class="i18n-es">Google Play Billing 8.2.1</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.08</p></div>
+        </div>
+
+        <!-- 2026.07 — Blokis (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.07</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Blokis — <span class="i18n-en">Launch on Google Play</span><span class="i18n-es">Lanzamiento en Google Play</span></h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">First Unity game — block puzzle with 3 modes</span><span class="i18n-es">Primer juego en Unity — puzzle de bloques con 3 modos</span></li>
+                <li><span class="i18n-en">Classic, 30 Levels and Time Attack</span><span class="i18n-es">Clásico, 30 Niveles y Contrarreloj</span></li>
+                <li><span class="i18n-en">Premium IAP — remove ads</span><span class="i18n-es">IAP Premium — quitar anuncios</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.05 — Mímica major update (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-primary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Dígalo con Mímica — <span class="i18n-en">Major Update</span><span class="i18n-es">Actualización mayor</span></h4>
+              <ul class="font-body-sm text-on-surface-variant space-y-2 list-disc list-inside">
+                <li><span class="i18n-en">8 new categories (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> words</span><span class="i18n-es">8 categorías nuevas (total: <span data-stat="mimCategories"></span>), <span data-stat="mimWords"></span> palabras</span></li>
+                <li><span class="i18n-en">Complete UI redesign</span><span class="i18n-es">Rediseño completo de la UI</span></li>
+                <li><span class="i18n-en">Search and favorites system</span><span class="i18n-es">Sistema de búsqueda y favoritos</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-primary rounded-full neon-glow-primary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-primary">2026.05</p></div>
+        </div>
+
+        <!-- 2026.05 — Recordatorios V8.4 (derecha) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right hidden md:block"><p class="font-code-sm text-secondary">2026.05</p></div>
+          <div class="z-10 w-4 h-4 bg-secondary rounded-full neon-glow-secondary border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-l-2 border-secondary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">Mis Recordatorios V8.4</h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">New features, multiple alerts per reminder, additional language support. Stable production release.</span>
+                <span class="i18n-es">Nuevas funcionalidades, alertas múltiples por recordatorio, soporte de idiomas adicionales. Versión estable en producción.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026.04 — La Ronda (izquierda) -->
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 text-right order-last md:order-first mt-4 md:mt-0">
+            <div class="glass-card p-6 rounded-xl border-r-2 border-tertiary">
+              <h4 class="font-label-caps text-label-caps text-on-surface mb-2">La Ronda — <span class="i18n-en">Official Launch</span><span class="i18n-es">Lanzamiento oficial</span></h4>
+              <p class="font-body-sm text-on-surface-variant">
+                <span class="i18n-en">Initial production release on Google Play. Party game app for groups with <span data-stat="larGames"></span> game modes.</span>
+                <span class="i18n-es">Lanzamiento en Google Play. App de juegos grupales con <span data-stat="larGames"></span> modos de juego.</span>
+              </p>
+            </div>
+          </div>
+          <div class="z-10 w-4 h-4 bg-tertiary rounded-full border-4 border-[#07070d]"></div>
+          <div class="md:w-1/2 md:pl-12 hidden md:block"><p class="font-code-sm text-tertiary">2026.04</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT -->
+  <section class="px-gutter py-section-gap max-w-container-max mx-auto" id="about">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div class="relative">
+        <div class="aspect-square rounded-3xl overflow-hidden glass-card p-2">
+          <img alt="Rodrigo Ferreira" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500" src="img/profile.jpg"/>
+        </div>
+        <div class="absolute -bottom-10 -right-10 glass-card p-8 rounded-2xl hidden md:block">
+          <p class="font-display-lg text-headline-md text-primary">URUGUAY</p>
+          <p class="font-code-sm text-on-surface-variant uppercase">EST. 1989 // MONTEVIDEO</p>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <h2 class="font-display-lg text-display-lg-mobile md:text-headline-md">
+          <span class="i18n-en">THE DEVELOPER<br/><span class="text-primary-container">BEHIND THE APPS</span></span>
+          <span class="i18n-es">EL DEVELOPER<br/><span class="text-primary-container">DETRÁS DE LAS APPS</span></span>
+        </h2>
+        <p class="font-body-lg text-on-surface-variant leading-relaxed">
+          <span class="i18n-en">I'm Rodrigo Ferreira, an Android developer from Montevideo. Beyond my formal day job, a while ago I decided to channel my passion for gaming and mobile development into building my own portfolio of apps. I started this journey long before the AI boom, driving every project from the ground up. While the development and execution are entirely my own, it's far from a solitary path: at key stages, I always make it a point to bounce ideas around, validate mechanics, and learn from the perspectives of close friends and great professionals in my network. At the end of the day, the code is mine, but the learning is shared.</span>
+          <span class="i18n-es">Soy Rodrigo Ferreira, developer Android de Montevideo. Más allá de mi día a día profesional, hace tiempo decidí volcar mi pasión por los juegos y el entorno mobile en un portfolio de apps propias. Empecé esto mucho antes del boom de la IA, impulsando cada proyecto desde cero. Aunque el desarrollo y la ejecución corren por mi cuenta, no es un camino solitario: en momentos clave siempre busco contrastar opiniones, validar mecánicas y nutrirme de la perspectiva de grandes profesionales y amigos que tengo cerca. Al final del día, el código es mío, pero el aprendizaje es compartido.</span>
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 glass-card rounded-lg">
+            <p class="font-label-caps text-primary text-[10px] mb-1">STACK</p>
+            <p class="font-code-sm">Java / Kotlin / Unity</p>
+          </div>
+          <div class="p-4 glass-card rounded-lg">
+            <p class="font-label-caps text-secondary text-[10px] mb-1">PHILOSOPHY</p>
+            <p class="font-code-sm"><span class="i18n-en">Ship &amp; iterate</span><span class="i18n-es">Lanzar e iterar</span></p>
+          </div>
+          <div class="p-4 glass-card rounded-lg">
+            <p class="font-label-caps text-tertiary text-[10px] mb-1"><span class="i18n-en">OUTSIDE CODE</span><span class="i18n-es">FUERA DEL CÓDIGO</span></p>
+            <p class="font-code-sm"><span class="i18n-en">Gym &amp; travel</span><span class="i18n-es">Gym y viajes</span></p>
+          </div>
+          <div class="p-4 glass-card rounded-lg">
+            <p class="font-label-caps text-error text-[10px] mb-1">FOCUS</p>
+            <p class="font-code-sm">LATAM 🌎</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SOCIAL & CONTACT -->
+  <section class="px-gutter py-section-gap" id="social">
+    <div class="max-w-container-max mx-auto">
+      <div class="text-center mb-16">
+        <p class="font-label-caps text-label-caps text-primary mb-2 uppercase"><span class="i18n-en">Find me at</span><span class="i18n-es">Encontrame en</span></p>
+        <h2 class="font-display-lg text-headline-md"><span class="i18n-en">SOCIAL &amp; CONTACT</span><span class="i18n-es">REDES Y CONTACTO</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a class="glass-card p-10 rounded-2xl flex flex-col items-center group hover:bg-primary/5 transition-all" href="https://x.com/RoFerreiraDev" target="_blank">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-primary text-3xl">alternate_email</span>
+          </div>
+          <h4 class="font-display-lg text-[20px] mb-2">Twitter / X</h4>
+          <p class="font-code-sm text-on-surface-variant">@RoFerreiraDev</p>
+        </a>
+        <a class="glass-card p-10 rounded-2xl flex flex-col items-center group hover:bg-secondary/5 transition-all" href="https://www.instagram.com/rodri.ferreira.89" target="_blank">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-secondary text-3xl">photo_camera</span>
+          </div>
+          <h4 class="font-display-lg text-[20px] mb-2">Instagram</h4>
+          <p class="font-code-sm text-on-surface-variant">@rodri.ferreira.89</p>
+        </a>
+        <a class="glass-card p-10 rounded-2xl flex flex-col items-center group hover:bg-tertiary/5 transition-all" href="https://www.linkedin.com/in/rodrigoferreira1989/" target="_blank">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-tertiary text-3xl">link</span>
+          </div>
+          <h4 class="font-display-lg text-[20px] mb-2">LinkedIn</h4>
+          <p class="font-code-sm text-on-surface-variant">Rodrigo Ferreira</p>
+        </a>
+      </div>
+      <div class="mt-24 glass-card rounded-3xl p-12 max-w-2xl mx-auto text-center border-primary/20" id="contact">
+        <h3 class="font-display-lg text-headline-md mb-4">
+          <span class="i18n-en">HAVE A PROJECT IN MIND?</span><span class="i18n-es">¿TENÉS UN PROYECTO?</span>
+        </h3>
+        <p class="font-body-lg text-on-surface-variant mb-10">
+          <span class="i18n-en">Available for select consulting and native Android development projects.</span>
+          <span class="i18n-es">Disponible para proyectos de consultoría y desarrollo Android nativo.</span>
+        </p>
+        <a href="mailto:ferre171717@gmail.com" class="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-xl font-label-caps text-label-caps hover:scale-105 transition-all neon-glow-primary">
+          <span class="material-symbols-outlined">mail</span>
+          ferre171717@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="border-t border-outline-variant/10 py-16">
+    <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8">
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <span class="font-display-lg text-primary text-[24px]">ROFERREIRA.DEV</span>
+        <p class="font-code-sm text-secondary text-[11px] uppercase tracking-tighter opacity-60">© 2026 ROFERREIRA.DEV // INDIE ANDROID DEVELOPER</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 font-code-sm text-code-sm">
+        <a class="text-outline hover:text-on-surface transition-colors" href="https://play.google.com/store/apps/dev?id=7538562544554627896" target="_blank">Google Play</a>
+        <a class="text-outline hover:text-on-surface transition-colors" href="https://x.com/RoFerreiraDev" target="_blank">X / Twitter</a>
+        <a class="text-outline hover:text-on-surface transition-colors" href="https://www.instagram.com/rodri.ferreira.89" target="_blank">Instagram</a>
+        <a class="text-outline hover:text-on-surface transition-colors" href="privacidad/mis-recordatorios.html"><span class="i18n-en">Privacy</span><span class="i18n-es">Privacidad</span></a>
+      </div>
+    </div>
+  </footer>
+</main>
+<script>
+  // ============================================
+  // CIFRAS CENTRALIZADAS — solo tocar acá
+  // ============================================
+  const STATS = {
+    // Hero / About
+    apps:          "5",
+    totalDownloads: 25,
+    rating:        4.6,
+    years:         5,
+    countries:     "10+",
+    // Blokis
+    blokisModes:   "4",
+    blokisLevels:  "51",
+    blokisDownloads: "5K+",
+    // La Ronda
+    larGames:      "12",
+    // Dígalo con Mímica
+    mimCategories: "24",
+    mimWords:      "2200+",
+    mimLanguages:  "8",
+    mimDownloads:  "10K+",
+    // Mis Recordatorios
+    recDownloads:  "10K+",
+    recRating:     "4.6",
+    recVersion:    "9.6",
+    recLanguages:  "10",
+    // Saldo a ASH
+    ashDownloads:  "376+",
+    ashRating:     "5",
+  };
+  const ANIMATED = new Set(['stat-apps','stat-downloads','stat-rating','stat-years']);
+  function applyStats(){
+    document.querySelectorAll('[data-stat]').forEach(el=>{
+      if(el.id && ANIMATED.has(el.id)) return;
+      const key=el.getAttribute('data-stat');
+      if(STATS[key]!==undefined) el.textContent=STATS[key];
+    });
+  }
+  applyStats();
+  function animateValue(obj, start, end, duration, suffix="") {
+    let startTimestamp=null;
+    const step=(timestamp)=>{
+      if(!startTimestamp) startTimestamp=timestamp;
+      const progress=Math.min((timestamp-startTimestamp)/duration,1);
+      const value=(progress*(end-start)).toFixed(end%1===0?0:1);
+      obj.innerHTML=value+suffix;
+      if(progress<1) window.requestAnimationFrame(step);
+    };
+    window.requestAnimationFrame(step);
+  }
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        animateValue(document.getElementById('stat-apps'),0,parseInt(STATS.apps),1500);
+        animateValue(document.getElementById('stat-downloads'),0,STATS.totalDownloads,2000,"K+");
+        animateValue(document.getElementById('stat-rating'),0,STATS.rating,2000,"★");
+        animateValue(document.getElementById('stat-years'),0,STATS.years,1500,"+");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.5});
+  observer.observe(document.getElementById('hero'));
+  function setLang(l){
+    document.querySelectorAll('.i18n-en').forEach(e=>e.style.display=l==='en'?'inline':'none');
+    document.querySelectorAll('.i18n-es').forEach(e=>e.style.display=l==='es'?'inline':'none');
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===l.toUpperCase()));
+    document.documentElement.lang=l;
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  try{const s=localStorage.getItem('lang');if(s)setLang(s);else setLang('es');}catch(e){}
+  function scrollShots(btn,dir){
+    const shots=btn.parentElement.querySelector('.shots');
+    shots.scrollBy({left:dir*300,behavior:'smooth'});
+  }
+  function initArrows(shots){
+    const wrap=shots.parentElement;
+    const arrowL=wrap.querySelector('.arrow-l');
+    const arrowR=wrap.querySelector('.arrow-r');
+    function updateArrows(){
+      arrowL.style.opacity=shots.scrollLeft<=10?'0':'1';
+      arrowL.style.pointerEvents=shots.scrollLeft<=10?'none':'auto';
+      arrowR.style.opacity=shots.scrollLeft>=shots.scrollWidth-shots.clientWidth-10?'0':'1';
+      arrowR.style.pointerEvents=shots.scrollLeft>=shots.scrollWidth-shots.clientWidth-10?'none':'auto';
+    }
+    shots.addEventListener('scroll',updateArrows);
+    const imgs=shots.querySelectorAll('img');
+    let loaded=0;
+    imgs.forEach(img=>{
+      if(img.complete){loaded++;if(loaded===imgs.length)updateArrows();}
+      else{img.addEventListener('load',()=>{loaded++;if(loaded===imgs.length)updateArrows();});}
+    });
+    updateArrows();
+  }
+  window.addEventListener('load',()=>{document.querySelectorAll('.shots').forEach(initArrows);});
+  window.addEventListener('scroll',()=>{
+    const nav=document.querySelector('nav');
+    if(window.scrollY>50) nav.classList.add('shadow-lg');
+    else nav.classList.remove('shadow-lg');
+  });
+</script>
+</body>
+</html>
