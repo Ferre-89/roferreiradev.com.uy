@@ -1,0 +1,4 @@
+# GitHub Pages construye este repo con Jekyll y, por defecto, Jekyll no publica archivos ni carpetas que
+# empiezan con "_", "." o "#". Esta unica clave hace que .well-known/ (assetlinks.json de Digalo con Mimica,
+# Android App Links) se copie al sitio. Todo lo demas sigue con los valores por defecto.
+include: [".well-known"]

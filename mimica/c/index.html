@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Categoría compartida · Dígalo con Mímica</title>
+<meta name="description" content="Te compartieron una categoría para jugar en Dígalo con Mímica (Charades!), el juego de mímica para Android.">
+<meta name="robots" content="noindex">
+<!--
+  Pagina de destino de los links de compartir categoria de Digalo con Mimica:
+  https://roferreiradev.com.uy/mimica/c/#<payload>
+  El payload (la categoria comprimida: JSON -> GZIP -> Base64 URL-safe) viaja despues del "#", asi que el
+  navegador NUNCA lo manda a este servidor. Esta pagina lo decodifica localmente y solo muestra nombre, emoji y
+  cantidad de palabras. A PROPOSITO no carga Google Analytics ni ningun script externo: gtag mandaria la URL
+  completa (con el fragmento) a Google. Tampoco hace fetch de nada.
+  Con la app instalada y el link verificado (.well-known/assetlinks.json), Android abre la app directo y esta
+  pagina no se ve.
+-->
+<style>
+  :root {
+    --fondo: #FBF8F9;
+    --texto: #2A2326;
+    --suave: #6B5E63;
+    --marca: #992F4D;
+    --linea: #E6DCDF;
+    --tarjeta: #FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fondo: #1C1719;
+      --texto: #EDE6E8;
+      --suave: #B3A6AB;
+      --marca: #E58BA4;
+      --linea: #3A3034;
+      --tarjeta: #262023;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  header { border-top: 6px solid var(--marca); padding: 2rem 1.25rem 0; }
+  header > div, main { max-width: 34rem; margin: 0 auto; }
+  main { padding: 1rem 1.25rem 4rem; }
+  .brand { display: flex; align-items: center; gap: .75rem; }
+  .brand img { width: 48px; height: 48px; border-radius: 12px; }
+  .brand strong { font-size: 1.05rem; }
+  .brand small { display: block; color: var(--suave); }
+  .lang { margin-left: auto; display: flex; gap: .25rem; }
+  .lang button {
+    background: none; border: 1px solid var(--linea); color: var(--suave); border-radius: 999px;
+    padding: .2rem .6rem; font: inherit; font-size: .85rem; cursor: pointer;
+  }
+  .lang button[aria-pressed="true"] { border-color: var(--marca); color: var(--marca); font-weight: 600; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 1.5rem 0 .5rem; }
+  p { margin: .5rem 0; }
+  .card {
+    background: var(--tarjeta);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .card .emoji { font-size: 4rem; line-height: 1; margin-bottom: .5rem; }
+  .card .name { font-size: 1.5rem; font-weight: 700; word-wrap: break-word; }
+  .card .count { color: var(--suave); }
+  .card.error { border-color: var(--marca); text-align: left; }
+  .btn {
+    display: block; width: 100%; text-align: center; text-decoration: none;
+    border-radius: 14px; padding: .9rem 1rem; margin-top: .75rem;
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .btn.primary { background: var(--marca); color: #fff; border: 0; }
+  .btn.secondary { background: none; color: var(--marca); border: 1.5px solid var(--marca); }
+  .btn:focus-visible { outline: 2px solid var(--marca); outline-offset: 2px; }
+  .hint { color: var(--suave); font-size: .95rem; }
+  .ok { color: var(--marca); font-weight: 600; }
+  a { color: var(--marca); }
+  footer { margin-top: 3rem; color: var(--suave); font-size: .9rem; border-top: 1px solid var(--linea); padding-top: 1rem; }
+  [hidden] { display: none !important; }
+  /* Idioma: se muestra un solo bloque a la vez */
+  html[data-lang="es"] .en, html[data-lang="en"] .es { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="../../img/icon_mim.png" alt="" width="48" height="48">
+    <div>
+      <strong>Dígalo con Mímica</strong>
+      <small class="es">Juego de mímica para Android</small>
+      <small class="en">Charades game for Android</small>
+    </div>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" onclick="setLang('es')">ES</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1 class="es">Te compartieron una categoría</h1>
+  <h1 class="en">Someone shared a category with you</h1>
+
+  <!-- Vista previa (se llena al decodificar el fragmento) -->
+  <div class="card" id="preview" hidden>
+    <div class="emoji" id="emoji"></div>
+    <div class="name" id="name"></div>
+    <div class="count" id="count"></div>
+  </div>
+
+  <!-- Sin datos para mostrar (navegador sin DecompressionStream) -->
+  <div class="card" id="generic" hidden>
+    <p class="es">Una categoría de palabras para jugar con tus amigos.</p>
+    <p class="en">A category of words to play with your friends.</p>
+  </div>
+
+  <!-- Link incompleto o inválido -->
+  <div class="card error" id="error" hidden>
+    <p class="es" id="error-es"></p>
+    <p class="en" id="error-en"></p>
+  </div>
+
+  <p class="es">Instalá la app y volvé a tocar el link para agregarla a tus categorías y jugarla.</p>
+  <p class="en">Install the app and tap the link again to add it to your categories and play it.</p>
+
+  <a class="btn primary" id="play" href="https://play.google.com/store/apps/details?id=com.roferreiradev.digaloconmimica">
+    <span class="es">Descargar en Google Play</span><span class="en">Get it on Google Play</span>
+  </a>
+
+  <button type="button" class="btn secondary" id="copy" hidden>
+    <span class="es">Ya tengo la app: copiar código</span><span class="en">I already have the app: copy code</span>
+  </button>
+  <p class="hint" id="copy-hint" hidden>
+    <span class="es">Código copiado. Abrí Mímica → Mis categorías → "Pegar categoría recibida".</span>
+    <span class="en">Code copied. Open the app → My categories → "Paste received category".</span>
+  </p>
+  <p class="hint" id="copy-help" hidden>
+    <span class="es">Si tenés la app y el link no la abrió, copiá el código y pegalo en Mis categorías → "Pegar categoría recibida".</span>
+    <span class="en">If you have the app and the link didn't open it, copy the code and paste it in My categories → "Paste received category".</span>
+  </p>
+
+  <p class="hint" id="not-android" hidden>
+    <span class="es">Dígalo con Mímica está disponible para Android.</span>
+    <span class="en">Dígalo con Mímica (Charades!) is available for Android.</span>
+  </p>
+
+  <footer>
+    <span class="es">La categoría viaja dentro del link, después del <code>#</code>: no se envía a ningún servidor. Esta página la lee en tu navegador y no usa analíticas. <a href="../../privacidad/digalo-con-mimica.html">Política de privacidad</a> · <a href="../../">RoFerreiraDev</a></span>
+    <span class="en">The category travels inside the link, after the <code>#</code>: it is never sent to any server. This page reads it in your browser and uses no analytics. <a href="../../privacidad/digalo-con-mimica.html#en">Privacy policy</a> · <a href="../../">RoFerreiraDev</a></span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var PREFIX = 'MIMICA:';
+  var FORMAT_VERSION = 1;
+  var MAX_WORDS = 200;
+
+  // ---- idioma: el del navegador, con conmutador ----
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang;
+    var btns = document.querySelectorAll('.lang button');
+    for (var i = 0; i < btns.length; i++) btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+  }
+  window.setLang = setLang;
+  setLang((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+
+  var isAndroid = /android/i.test(navigator.userAgent);
+  if (!isAndroid) document.getElementById('not-android').hidden = false;
+
+  // ---- helpers ----
+  function show(id) { document.getElementById(id).hidden = false; }
+  function showError(es, en) {
+    document.getElementById('error-es').textContent = es;
+    document.getElementById('error-en').textContent = en;
+    show('error');
+  }
+  function plural(n, lang) {
+    if (lang === 'es') return n === 1 ? '1 palabra' : n + ' palabras';
+    return n === 1 ? '1 word' : n + ' words';
+  }
+  function base64UrlToBytes(s) {
+    s = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+  function gunzipToText(bytes) {
+    var ds = new DecompressionStream('gzip');
+    var stream = new Blob([bytes]).stream().pipeThrough(ds);
+    return new Response(stream).text();
+  }
+
+  // ---- payload: solo el fragmento, nunca la query ----
+  var payload = (location.hash || '').replace(/^#/, '');
+  var valid = /^[A-Za-z0-9_-]+$/.test(payload);
+
+  if (!valid) {
+    showError('Este link está incompleto. Pedí que te lo reenvíen entero.',
+              'This link is incomplete. Ask the sender to send it again in full.');
+    return;
+  }
+
+  // Boton "copiar codigo" (formato MIMICA:<payload>, que la app acepta en "Pegar categoria recibida")
+  var copyBtn = document.getElementById('copy');
+  if (isAndroid && navigator.clipboard && navigator.clipboard.writeText) {
+    copyBtn.hidden = false;
+    document.getElementById('copy-help').hidden = false;
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(PREFIX + payload).then(function () {
+        document.getElementById('copy-help').hidden = true;
+        show('copy-hint');
+      }, function () {});
+    });
+  }
+
+  if (typeof DecompressionStream === 'undefined') {
+    // Navegador viejo: no se puede descomprimir; se muestra el texto generico (el link sigue sirviendo)
+    show('generic');
+    return;
+  }
+
+  var bytes;
+  try { bytes = base64UrlToBytes(payload); } catch (e) { bytes = null; }
+  if (!bytes) {
+    showError('Este link no es válido. Pedí que te lo reenvíen entero.',
+              'This link is not valid. Ask the sender to send it again in full.');
+    return;
+  }
+
+  gunzipToText(bytes).then(function (json) {
+    var dto = JSON.parse(json);
+    if (!dto || typeof dto !== 'object') throw new Error('bad json');
+    if (dto.v > FORMAT_VERSION) {
+      showError('Este link necesita una versión más nueva de la app. Actualizala desde Google Play.',
+                'This link needs a newer version of the app. Update it from Google Play.');
+      return;
+    }
+    var words = Array.isArray(dto.words) ? dto.words.length : 0;
+    if (dto.v !== FORMAT_VERSION || typeof dto.name !== 'string' || !dto.name.trim() || words < 1 || words > MAX_WORDS) throw new Error('invalid');
+    document.getElementById('emoji').textContent = typeof dto.emoji === 'string' && dto.emoji ? dto.emoji : '✨';
+    document.getElementById('name').textContent = dto.name.trim();
+    var lang = document.documentElement.getAttribute('data-lang');
+    var count = document.getElementById('count');
+    count.textContent = plural(words, lang);
+    // El contador sigue al idioma si el usuario lo cambia
+    var btns = document.querySelectorAll('.lang button');
+    for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () {
+      count.textContent = plural(words, document.documentElement.getAttribute('data-lang'));
+    });
+    show('preview');
+  }).catch(function () {
+    // GZIP cortado o JSON invalido: casi siempre un mensaje que llego cortado
+    showError('El link llegó incompleto o cortado. Pedí que te lo reenvíen entero.',
+              'The link arrived incomplete or cut off. Ask the sender to send it again in full.');
+  });
+})();
+</script>
+</body>
+</html>
